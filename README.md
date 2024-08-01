@@ -1,5 +1,4 @@
 # 📽️ We Show You 
-Created as 
 
 ## 📖 Project Description
 A video sharing SPA that allows uploading and viewing of demonstration videos that are 5 minutes and under. 
