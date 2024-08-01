@@ -17,6 +17,9 @@ import Logout from "./pages/Logout"
 import SearchResults from "./components/SearchResults";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
+import AdministratorLogin from "./pages/AdministratorLogin";
+import GetAllVideos from "./pages/GetAllVideos";
+import VideoGenres from "./pages/VideoGenres";
 
 
 function App() {
@@ -27,12 +30,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
-        <Route index element={<Videos />} />
+        <Route index element={<Account />} />
         <Route path="account" element={<Account />} />
         <Route path="aboutUs" element={<AboutUs />} />
         <Route path="about" element={<About />} />
         <Route path="contactUs" element={<ContactUs />}/>
         <Route path="videos" element={<Videos />} />
+        <Route path="videoGenres" element={<VideoGenres />} />
         <Route path="searchResults" element={<SearchResults />} />
         <Route path="upload" element={<Upload />} />
         <Route path="register" element={<RegisterUser />} />
@@ -40,8 +44,10 @@ function App() {
         <Route path="logout" element={<Logout />} />
         <Route path="registrationSuccess" element={<RegistrationSuccess />} />
         <Route path="testPage" element={<TestPage />} />
+        <Route path="adminLogin" element={<AdministratorLogin />} />
         <Route path="administration" element={<Administration />} />
         <Route path="getAllUsers" element={<GetAllUsers />} />
+        <Route path="getAllVideos" element={<GetAllVideos />} />
         <Route path="*" element={<PageNotFound />} />
         </Route>
         </Routes>

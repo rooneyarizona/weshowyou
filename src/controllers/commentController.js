@@ -34,3 +34,13 @@ exports.addComment = (req, res) => {
     });
   });
 };
+
+exports.getAllComments = (req, res) => {
+  const commentQuery = `SELECT * FROM COMMENTS`;
+  db.query(commentQuery, (err, results) => {
+    if (err) {
+      return res.status(500).send({ success: false, message: err.message });
+    }
+    res.send({ success: true, users: results });
+  });
+};

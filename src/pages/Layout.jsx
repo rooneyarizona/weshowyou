@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import { VideosProvider} from "../contexts/VideosContext";
 import { UsersProvider } from "../contexts/UsersContext";
+import Footer from "../components/Footer";
 
 
 function Layout() {
@@ -18,6 +19,9 @@ function Layout() {
       <main className="main-container">
         <Outlet />
       </main>
+      <footer className="main-container">
+        <Footer />
+      </footer>
       </VideosProvider>
       </UsersProvider>
     </div>

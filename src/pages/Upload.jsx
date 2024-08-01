@@ -16,7 +16,6 @@ const s3 = new AWS.S3();
 
 function Upload({ title, videoUrl }) {
   const [uploadResult, setUploadResult] = useState("");
-  const {test} = useVideos();
   const {globalUserName} = useUsers();
   
 

@@ -4,9 +4,10 @@ const UsersContext = createContext();
 
 function UsersProvider({ children }) {
   const [globalUserName, setGlobalUserName] = useState("");
+  const [adminUsername, setAdminUserName] = useState("");
 
   return (
-    <UsersContext.Provider value={{ globalUserName, setGlobalUserName }}>
+    <UsersContext.Provider value={{ globalUserName, setGlobalUserName, setAdminUserName, adminUsername }}>
       {children}
     </UsersContext.Provider>
   );

@@ -10,6 +10,7 @@ export default function VideoList() {
 
   //useEffect to pull data from external source and only present on mount.
   useEffect(() => {
+    console.log("VideoList Mounted");
     async function getVideos() {
       try {
         const res = await fetch("http://localhost:5000/api/videos");
@@ -26,9 +27,9 @@ export default function VideoList() {
     getVideos();
   }, []);
 
-if(loading) {
-  return <Loading />
-}
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     //Map all video entries from video table
@@ -40,6 +41,7 @@ if(loading) {
             title={video.videoTitle}
             videoUrl={video.videoUrl}
             videoId={video.videoId}
+            dateAdded={video.dateAdded}
           />
         ))
       ) : (

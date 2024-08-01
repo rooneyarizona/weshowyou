@@ -32,7 +32,7 @@ export default function NavBar() {
           onMouseEnter={() => handleMouseEnter("Videos")}
           onMouseLeave={handleMouseLeave}
         >
-          <NavLink to="/videos">Videos</NavLink>
+          <NavLink to="/videoGenres">Videos</NavLink>
         </button>
 
         <button
@@ -51,6 +51,7 @@ export default function NavBar() {
           <NavLink to="/aboutUs">About Us</NavLink>
         </button>
         <button
+        hidden={true}
           style={buttonStyle("TestPage")}
           onMouseEnter={() => handleMouseEnter("Test Page")}
           onMouseLeave={handleMouseLeave}
@@ -62,7 +63,7 @@ export default function NavBar() {
           onMouseEnter={() => handleMouseEnter("Administration")}
           onMouseLeave={handleMouseLeave}
         >
-          <NavLink to="/administration">Admin</NavLink>
+          <NavLink to="/adminLogin">Admin</NavLink>
         </button>
       </div>
 

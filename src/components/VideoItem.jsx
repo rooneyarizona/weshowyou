@@ -5,13 +5,15 @@ import { useUsers } from "../contexts/UsersContext";
 //TODO: Split into components as API and display component
 //Pulls comments data and allows user to add a commment which will then set new state to show instantly
 
-export default function VideoItem({ title, videoUrl, videoId }) {
+export default function VideoItem({ title, videoUrl, videoId, dateAdded }) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-  const [userName, setUserName] = useState(); 
-  const {globalUserName} = useUsers();
+  const [userName, setUserName] = useState();
+  const { globalUserName } = useUsers();
+  const [showComments, setShowComments] = useState(false);
 
   useEffect(() => {
+    console.log("Comments fetched");
     async function fetchComments() {
       try {
         const res = await fetch(
@@ -57,9 +59,14 @@ export default function VideoItem({ title, videoUrl, videoId }) {
     }
   };
 
+  const handleButtonClick = () => {
+    setShowComments(!showComments);
+  };
+
   return (
     <div className="main-container">
       <h2 className="video-title">{title}</h2>
+      <h1>{dateAdded}</h1>
       {/* <iframe
         width="560"
         height="315"
@@ -68,21 +75,28 @@ export default function VideoItem({ title, videoUrl, videoId }) {
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe> */}
-      <video width="500" height="400"
-          src={videoUrl}
-          title={title}
-          controls
-          muted
-          autoPlay
-          className="responsive-video"
-        ></video>
-
-      <Comment
-        comments={comments}
-        newComment={newComment}
-        setNewComment={setNewComment}
-        handleAddComment={handleAddComment}
-      />
+      <video
+        width="500"
+        height="400"
+        src={videoUrl}
+        title={title}
+        dateAdded={dateAdded}
+        controls
+        muted
+        autoPlay
+        className="responsive-video"
+      ></video>
+      <button onClick={handleButtonClick}>
+        {showComments ? "Hide Comments" : "Show Comments"}
+      </button>
+      {showComments && (
+        <Comment
+          comments={comments}
+          newComment={newComment}
+          setNewComment={setNewComment}
+          handleAddComment={handleAddComment}
+        />
+      )}
     </div>
   );
 }

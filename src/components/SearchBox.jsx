@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useVideos } from "../contexts/VideosContext";
 
 export default function SearchBox() {
   const searchArray = [
@@ -14,7 +15,7 @@ export default function SearchBox() {
   const inputElement = useRef(null);
   const navigate = useNavigate();
   const [searchItem, setSearchItem] = useState(searchPlaceholder)
-  const [searchResults, setSearchResults ] = useState("");
+  const {searchResults, setSearchResults } = useVideos([]);
   
   const handleSearch = async () => {
     if (searchItem.trim() === "") return;
@@ -26,6 +27,8 @@ export default function SearchBox() {
       }
       const data = await res.json();
       setSearchResults(data);
+      console.log(data);
+      console.log(searchResults);
       navigate("/searchResults");
     } catch (error) {
       console.error("Error fetching videos:", error);
@@ -41,7 +44,7 @@ export default function SearchBox() {
 
   const handleInputChange = (e) => {
     setSearchItem(e.target.value);
-    navigate("/videos");
+    
   };
 
   return (

@@ -1,14 +1,12 @@
 import VideoList from "../components/VideoList";
-import SearchResults from "../components/SearchResults";
 
-function Videos({ searchItem, setSearchItem }) {
+function Videos() {
   return (
-    <div className="main-container">
+    <div>
       <h1>Videos 📽️</h1>
-      <VideoList />      
+      <VideoList />
     </div>
   );
 }
 
 export default Videos;
-

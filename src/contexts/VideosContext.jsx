@@ -1,14 +1,14 @@
-import { useContext, createContext } from "react";
+import { useContext, createContext, useState } from "react";
 
 const VideosContext = createContext();
 
 function VideosProvider({ children }) {
-  const test = "Hello";
+  const [searchResults, setSearchResults] = useState([])
   return (
     
       <VideosContext.Provider
         value={{
-          test: test,
+          searchResults, setSearchResults
         }}
       >
         {children}
