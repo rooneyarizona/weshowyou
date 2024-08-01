@@ -5,10 +5,11 @@ Created as
 A video sharing SPA that allows uploading and viewing of demonstration videos that are 5 minutes and under. 
 
 ## 🚀 Features
-- Video Uploads: Easily upload videos to our platform. Add metadata like titles and descriptions to make your content shine.
-- Search Functionality: Find videos quickly using our powerful search feature. Filter by keywords and discover exactly what you're looking for.
-- Video Playback: Watch videos directly from our platform with smooth playback and high-quality streaming.
-- Commenting System: Share your thoughts on videos with our intuitive commenting feature. Engage with other users and join the conversation!
+- Video Uploads: Upload video media content efficiently to cloud storage separating metadata from video data.
+- Search Functionality: Find videos quickly using powerful search feature. Filter by keywords only being shown relevent videos instantly.
+- Video Playback: High speed fetch and playback.
+- Commenting System: Share your thoughts on videos with intuitive comment feature that can also be hidden with click of button.
+- Administration: Access reporting from multiple APIs to analyze user and video data.
 
 ## 🛠️ Technologies Used
 - Frontend: React 
