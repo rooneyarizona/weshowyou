@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Comment from "./Comment";
 import { useUsers } from "../contexts/UsersContext";
+import Draggable from "react-draggable";
 
 //TODO: Split into components as API and display component
 //Pulls comments data and allows user to add a commment which will then set new state to show instantly
 
-export default function VideoItem({ title, videoUrl, videoId, dateAdded }) {
+export default function VideoItem({ title, videoUrl, videoId }) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const [userName, setUserName] = useState();
@@ -64,9 +65,11 @@ export default function VideoItem({ title, videoUrl, videoId, dateAdded }) {
   };
 
   return (
+    
     <div className="main-container">
+      {/* <Draggable> */}
       <h2 className="video-title">{title}</h2>
-      <h1>{dateAdded}</h1>
+      
       {/* <iframe
         width="560"
         height="315"
@@ -75,12 +78,12 @@ export default function VideoItem({ title, videoUrl, videoId, dateAdded }) {
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe> */}
+      
       <video
         width="500"
         height="400"
         src={videoUrl}
         title={title}
-        dateAdded={dateAdded}
         controls
         muted
         autoPlay
@@ -97,6 +100,7 @@ export default function VideoItem({ title, videoUrl, videoId, dateAdded }) {
           handleAddComment={handleAddComment}
         />
       )}
+      {/* </Draggable> */}
     </div>
   );
 }

@@ -84,7 +84,7 @@ function Upload({ title, videoUrl }) {
           <h1>{uploadResult}</h1>
           {uploadResult && <VideoItem title={title} videoUrl={videoUrl} />}
           <NavLink to="/videos">
-            <h1>Back to Videos</h1>
+            <p className="pageLinks"><h1>Back to Videos</h1></p>
           </NavLink>
         </div>
       </div>

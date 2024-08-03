@@ -1,18 +1,19 @@
 import { useVideos } from "../contexts/VideosContext";
 import VideoItem from "./VideoItem";
+import Draggable from "react-draggable";
 
 export default function SearchResults() {
-  const { searchResults } = useVideos([]); 
+  const { searchResults } = useVideos([]);
 
   return (
     <div>
-      {console.log("Search Results Global:" , searchResults)}
+      {console.log("Search Results Global:", searchResults)}
       <h1>Search Results 📽️</h1>
       {searchResults.length > 0 ? (
         <div>
           {searchResults.map((resultItem) => (
             <VideoItem
-              key={resultItem.videoId} 
+              key={resultItem.videoId}
               videoId={resultItem.videoId}
               videoUrl={resultItem.videoUrl}
               title={resultItem.videoTitle}

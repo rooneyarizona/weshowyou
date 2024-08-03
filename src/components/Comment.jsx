@@ -18,7 +18,7 @@ export default function Comment({ userName, comments, newComment, setNewComment,
       ) : (
         <p>No comments yet</p>
       )}
-
+  {/**/}
       <div className="add-comment">
         <input
           type="text"

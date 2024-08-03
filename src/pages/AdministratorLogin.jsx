@@ -12,7 +12,7 @@ function AdministratorLogin() {
    function handleLoginSubmit (event){
     event.preventDefault();
     if(adminUsername === "admin" && adminPassword === "password123"){
-        setAdminUsername(adminUsername);
+        setAdminUsername("admin");
         navigate("/administration");
     }
     else {

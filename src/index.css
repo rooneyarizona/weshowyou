@@ -1,3 +1,4 @@
+/*Main body styling*/
 body {
   font-family: Arial, sans-serif;
 }
@@ -8,29 +9,18 @@ h1 {
   .container {
     padding: 10px;
   }
+  body::-webkit-scrollbar {
+    display: none;
+  }  
   ul {
     padding: 0;
   }
-
   li {
     list-style-type: none;
     padding: 10px;
     border-bottom: 1px solid #ddd;
   }
 }
-
-body {
-  margin: 0;
-  font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-}
-body::-webkit-scrollbar {
-  display: none;
-}
-
 h1 {
   font-family: 'Roboto', sans-serif;
   color: #ff6347; 
@@ -41,24 +31,16 @@ img {
   width: 600px;
   align-self: auto;
 }
-.about-us {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 32px;
-}
 
-.search-icon{
-  font-size: 1.6rem;
-}
-input {
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  padding: 0.75rem 1rem;
-  font-weight: 500;
-  font-size: 1rem;
-  margin: 5px;
-
-}
+/* body {
+  margin: 0;
+  font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+} */
+/*Header & Navigation*/
 .header {
   text-align: center;
   background-color: #2bd8ad;
@@ -84,12 +66,39 @@ input {
   padding: 0 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .navbar-buttons {
   display: flex;
   gap: 10px;
 }
-
+.pageLinks{
+  transition: background-color 0.3s ease;
+}
+.pageLinks:hover{
+  background-color: #76d4b5;
+}
+.mainTextContent {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+.text-header {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+/*Form & Buttons styling*/
+.search-icon{
+  font-size: 1.6rem;
+}
+input {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 5px;
+}
 button {
   cursor: pointer;
   background: #8ae4c6;
@@ -110,7 +119,7 @@ button a {
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
 }
-
+/*Video Styling*/
 .video-container {
   display: grid;
   height: 100%;
@@ -130,22 +139,25 @@ button a {
   border-radius: 1px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+.mainContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 2fr); 
+  gap: 1px; 
+  padding: 1px; 
+  background-color: #fff;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 .video-item {
   width: 50%;
   heigh: 50%;
 }
-.text-header {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 10px;
-}
-
 input.upload {
   display: none;
 }
-
-
 .custom-file-upload {
   display: inline-block;
   cursor: pointer;
@@ -159,11 +171,9 @@ input.upload {
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
-
 .custom-file-upload:hover {
   background-color: #76d4b5;
 }
-
 .video-title {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
@@ -172,9 +182,8 @@ input.upload {
   padding: 1rem;
   margin-bottom: 1px;
 }
-
 /* Base styles */
-body {
+/* body {
   font-family: Arial, sans-serif;
 }
 
@@ -182,13 +191,12 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
 }
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-}
+} */
 
 /* Table styles */
 .user-table {
@@ -197,7 +205,6 @@ h1 {
   border-collapse: collapse;
   margin: 20px 0;
 }
-
 .user-table th,
 .user-table td {
   padding: 10px;
@@ -215,7 +222,7 @@ h1 {
 }
 
 /* Responsive styles for smaller screens */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   .container {
     padding: 10px;
   }
@@ -224,21 +231,19 @@ h1 {
   .user-table td {
     padding: 8px;
   }
-}
+} */
 /*Loading styles*/
 .spinner-full-page {
   margin: 2.5rem;
   height: calc(100vh - 5rem);
   background-color: var(--color-dark--1);
 }
-
 .spinner-container {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .spinner {
   width: 6rem;
   height: 6rem;
@@ -247,7 +252,6 @@ h1 {
   -webkit-mask: radial-gradient(farthest-side, #18215300 calc(100% - 8px), #000 0);
   animation: rotate 1.5s infinite linear;
 }
-
 @keyframes rotate {
   to {
     transform: rotate(1turn);
