@@ -22,7 +22,7 @@ function Login() {
       const data = await res.json();
       if (data.success) {
         setGlobalUserName(data.userName);
-        navigate("/videos");
+        navigate("/videoGenres");
       } else {
         alert(data.message);
       }

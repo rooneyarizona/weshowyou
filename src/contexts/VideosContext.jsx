@@ -3,17 +3,16 @@ import { useContext, createContext, useState } from "react";
 const VideosContext = createContext();
 
 function VideosProvider({ children }) {
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState([]);
   return (
-    
-      <VideosContext.Provider
-        value={{
-          searchResults, setSearchResults
-        }}
-      >
-        {children}
-      </VideosContext.Provider>
-    
+    <VideosContext.Provider
+      value={{
+        searchResults,
+        setSearchResults,
+      }}
+    >
+      {children}
+    </VideosContext.Provider>
   );
 }
 

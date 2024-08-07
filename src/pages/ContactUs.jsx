@@ -30,7 +30,7 @@ function ContactUs() {
       );
       console.log(response.data);
       alert("Form Submitted!");
-      navigate("/registrationSuccess");
+      navigate("/formSubmitted");
     } catch (error) {
       console.error("Error submitting form: ", error);
       alert("Error submitting form.");

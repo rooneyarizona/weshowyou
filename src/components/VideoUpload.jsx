@@ -5,7 +5,7 @@ function VideoUpload({ onUpload }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [genre, setGenre] = useState("");
-  const [userName, setUserName] = useState("")
+  const [userName, setUserName] = useState("");
   const [error, setError] = useState("");
 
   const handleFileChange = (e) => {
@@ -52,7 +52,7 @@ function VideoUpload({ onUpload }) {
       </div>
       {videoInfo && (
         <div>
-           <input
+          <input
             type="text"
             placeholder={"User Name"}
             value={userName}

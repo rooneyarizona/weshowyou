@@ -1,6 +1,5 @@
 import { useVideos } from "../contexts/VideosContext";
 import VideoItem from "./VideoItem";
-import Draggable from "react-draggable";
 
 export default function SearchResults() {
   const { searchResults } = useVideos([]);

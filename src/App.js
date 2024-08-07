@@ -20,6 +20,8 @@ import ContactUs from "./pages/ContactUs";
 import AdministratorLogin from "./pages/AdministratorLogin";
 import GetAllVideos from "./pages/GetAllVideos";
 import VideoGenres from "./pages/VideoGenres";
+import FormSubmitted from "./pages/FormSubmitted";
+import GenreResults from "./components/GenreResults";
 
 
 function App() {
@@ -35,8 +37,10 @@ function App() {
         <Route path="aboutUs" element={<AboutUs />} />
         <Route path="about" element={<About />} />
         <Route path="contactUs" element={<ContactUs />}/>
+        <Route path="formSubmitted" element={<FormSubmitted />} />
         <Route path="videos" element={<Videos />} />
         <Route path="videoGenres" element={<VideoGenres />} />
+        <Route path="genreResults" element={<GenreResults />} />
         <Route path="searchResults" element={<SearchResults />} />
         <Route path="upload" element={<Upload />} />
         <Route path="register" element={<RegisterUser />} />

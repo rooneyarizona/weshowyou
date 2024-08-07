@@ -72,7 +72,7 @@ function Upload({ title, videoUrl }) {
   return (
     <div>
       <h1 align="center">Upload</h1>
-      <ul>
+      <ul className="mainTextContent">
         ⌛ Maximum length = 5 minutes
         🙈 No inappropriate content
         🙉 No cussing/swearing

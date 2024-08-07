@@ -70,8 +70,35 @@ img {
   display: flex;
   gap: 10px;
 }
+table{
+  border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 2rem;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+td, thead {
+  padding: 12px 15px;
+}
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
 .pageLinks{
   transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.pageLinks a{
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 .pageLinks:hover{
   background-color: #76d4b5;
@@ -79,6 +106,11 @@ img {
 .mainTextContent {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
+}
+.mainTextContent a {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  text-decoration: none;
 }
 .text-header {
   font-size: 1.2rem;

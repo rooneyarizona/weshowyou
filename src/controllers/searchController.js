@@ -1,10 +1,10 @@
 const db = require("../models/db");
 
 exports.getVideosBySearch = (req, res) => {
-  const videoTitle = req.params.videoTitle.trim(); 
+  const videoTitle = req.params.videoTitle.trim();
 
   if (!videoTitle) {
-    alert("👋 You need to enter some text!")
+    alert("👋 You need to enter some text!");
     return res.json([]);
   }
 

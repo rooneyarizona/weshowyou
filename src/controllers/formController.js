@@ -10,7 +10,7 @@ exports.submitForm = (req, res) => {
     (err, result) => {
       if (err) {
         console.error("Error inserting user: ", err);
-        return res.status(500).send(err); // Send error to client
+        return res.status(500).send(err); 
       }
       res.send("User registered successfully!");
     }

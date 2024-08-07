@@ -10,18 +10,21 @@ export default function SearchBox() {
     { id: 4, searchRequest: "How to write in React" },
   ];
 
-  const [searchPlaceholder, setSearchPlaceholder] = useState("How to walk a dog");
-  
+  const [searchPlaceholder, setSearchPlaceholder] =
+    useState("How to walk a dog");
+
   const inputElement = useRef(null);
   const navigate = useNavigate();
-  const [searchItem, setSearchItem] = useState(searchPlaceholder)
-  const {searchResults, setSearchResults } = useVideos([]);
-  
+  const [searchItem, setSearchItem] = useState(searchPlaceholder);
+  const { searchResults, setSearchResults } = useVideos([]);
+
   const handleSearch = async () => {
     if (searchItem.trim() === "") return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/videos/search/${searchItem}`);
+      const res = await fetch(
+        `http://localhost:5000/api/videos/search/title/${searchItem}`
+      );
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
@@ -41,10 +44,8 @@ export default function SearchBox() {
     setSearchPlaceholder(randomSearchRequest);
   }
 
-
   const handleInputChange = (e) => {
     setSearchItem(e.target.value);
-    
   };
 
   return (
