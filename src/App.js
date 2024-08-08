@@ -22,6 +22,7 @@ import GetAllVideos from "./pages/GetAllVideos";
 import VideoGenres from "./pages/VideoGenres";
 import FormSubmitted from "./pages/FormSubmitted";
 import GenreResults from "./components/GenreResults";
+import GetAllUserFeedback from "./pages/GetAllUserFeedback";
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
         <Route path="administration" element={<Administration />} />
         <Route path="getAllUsers" element={<GetAllUsers />} />
         <Route path="getAllVideos" element={<GetAllVideos />} />
+        <Route path="getAllUserFeedback" element={<GetAllUserFeedback />} />
         <Route path="*" element={<PageNotFound />} />
         </Route>
         </Routes>

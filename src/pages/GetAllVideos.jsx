@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { useUsers } from "../contexts/UsersContext";
 import { useNavigate } from "react-router-dom";
+import { Button } from "bootstrap";
+import BackButton from "../components/BackButton";
 
 //Component for reporting data from users API
 //TODO: Make resuable component that can be used for multiple administration reports.
@@ -10,13 +12,7 @@ import { useNavigate } from "react-router-dom";
 function GetAllVideos() {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const {adminUsername} = useUsers("");
-  const navigate = useNavigate();
-
-  
-  if(adminUsername !== 'admin'){
-    navigate("/adminLogin")
-} 
+  const { adminUsername } = useUsers("");
 
   useEffect(() => {
     async function getVideos() {
@@ -27,7 +23,7 @@ function GetAllVideos() {
         }
         const data = await res.json();
         console.log("Full response: ", data);
-        console.log("Admin Username: ", adminUsername)
+        console.log("Admin Username: ", adminUsername);
         setVideos(data.videos || []);
         setLoading(false);
       } catch (error) {
@@ -45,9 +41,7 @@ function GetAllVideos() {
   }
 
   return (
-    
     <div className="container">
-        
       <h1>Videos</h1>
       {videos.length > 0 ? (
         <table className="user-table">
@@ -69,15 +63,17 @@ function GetAllVideos() {
                 <td>{video.videoTitle}</td>
                 <td>{video.videoDescription}</td>
                 <td>{video.videoGenre}</td>
-                <td>{video.dateAdded}</td>
+                {new Date(video.dateAdded).toLocaleDateString("en-US")}
               </tr>
             ))}
           </tbody>
         </table>
-        
       ) : (
         <p>☹️ No videos found</p>
       )}
+      <span>
+        <BackButton location={"administration"}/>
+      </span>
     </div>
   );
 }

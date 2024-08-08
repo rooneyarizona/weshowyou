@@ -4,14 +4,14 @@ const UsersContext = createContext();
 
 function UsersProvider({ children }) {
   const [globalUserName, setGlobalUserName] = useState("");
-  const [adminUsername, setAdminUserName] = useState("");
+  const [adminUsername, setAdminUsername] = useState("");
 
   return (
     <UsersContext.Provider
       value={{
         globalUserName,
         setGlobalUserName,
-        setAdminUserName,
+        setAdminUsername,
         adminUsername,
       }}
     >

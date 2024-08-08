@@ -70,7 +70,7 @@ img {
   display: flex;
   gap: 10px;
 }
-table{
+.videoGenreTable{
   border-collapse: collapse;
     margin: 25px 0;
     font-size: 2rem;
@@ -80,6 +80,11 @@ table{
 }
 td, thead {
   padding: 12px 15px;
+  
+}
+thead {
+  text-align: center;
+  font-weight: 600  ;
 }
 tr {
   border-bottom: 1px solid #dddddd;

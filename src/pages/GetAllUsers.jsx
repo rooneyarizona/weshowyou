@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
+import BackButton from "../components/BackButton";
 
 //Component for reporting data from users API
 //TODO: Make resuable component that can be used for multiple administration reports.
@@ -34,6 +35,7 @@ function GetAllUsers() {
   }
 
   return (
+    <>
     <div className="container">
       <h1>Users</h1>
       {users.length > 0 ? (
@@ -63,6 +65,10 @@ function GetAllUsers() {
         <p>☹️ No users found</p>
       )}
     </div>
+    <span>
+    <BackButton location={"administration"}/>
+  </span>
+  </>
   );
 }
 

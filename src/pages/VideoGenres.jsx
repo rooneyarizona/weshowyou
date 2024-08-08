@@ -13,7 +13,7 @@ function VideoGenres() {
   return (
     <div>
       <h1>Video Genres 🔮</h1>
-      <table>
+      <table className="videoGenreTable">
         <tbody>
           <tr>
             <td><button onClick={() => handleGenreSelection("Cooking")}>Cooking</button></td>
