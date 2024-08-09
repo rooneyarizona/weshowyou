@@ -65,17 +65,7 @@ export default function VideoItem({ title, videoUrl, videoId }) {
 
   return (
     <div className="main-container">
-      {/* <Draggable> */}
       <h2 className="video-title">{title}</h2>
-
-      {/* <iframe
-        width="560"
-        height="315"
-        src={videoUrl}
-        title={title}
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe> */}
 
       <video
         width="500"
@@ -98,7 +88,6 @@ export default function VideoItem({ title, videoUrl, videoId }) {
           handleAddComment={handleAddComment}
         />
       )}
-      {/* </Draggable> */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { useUsers } from "../contexts/UsersContext";
 //TODO: Add additional reports
 
 function Administration() {
-  const { adminUsername } = useUsers("");
+  const { globalAdminUsername } = useUsers("");
   return (
     <div className="mainTextContent">
       <h2>Reports</h2>

@@ -12,7 +12,12 @@ import BackButton from "../components/BackButton";
 function GetAllVideos() {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { adminUsername } = useUsers("");
+  const { globalAdminUsername } = useUsers("");
+  const navigate = useNavigate();
+
+  // if(globalAdminUsername !== "admin"){
+  //   navigate("/adminLogin")
+  // }
 
   useEffect(() => {
     async function getVideos() {
@@ -23,7 +28,7 @@ function GetAllVideos() {
         }
         const data = await res.json();
         console.log("Full response: ", data);
-        console.log("Admin Username: ", adminUsername);
+        console.log("Admin Username: ", globalAdminUsername);
         setVideos(data.videos || []);
         setLoading(false);
       } catch (error) {
