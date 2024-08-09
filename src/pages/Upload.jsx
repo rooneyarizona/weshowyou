@@ -16,8 +16,7 @@ const s3 = new AWS.S3();
 
 function Upload({ title, videoUrl }) {
   const [uploadResult, setUploadResult] = useState("");
-  const {globalUserName} = useUsers();
-  
+  const { globalUserName } = useUsers();
 
   const saveVideoMetadata = (title, description, genre, videoUrl, userName) => {
     fetch("http://localhost:5000/api/videos", {
@@ -73,18 +72,18 @@ function Upload({ title, videoUrl }) {
     <div>
       <h1 align="center">Upload</h1>
       <ul className="mainTextContent">
-        ⌛ Maximum length = 5 minutes
-        🙈 No inappropriate content
-        🙉 No cussing/swearing
-        🎓 Must be a demonstration
+        ⌛ Maximum length = 5 minutes 🙈 No inappropriate content 🙉 No
+        cussing/swearing 🎓 Must be a demonstration
       </ul>
       <div className="main-container">
         <VideoUpload onUpload={handleVideoUpload} />
         <div id="result">
           <h1>{uploadResult}</h1>
           {uploadResult && <VideoItem title={title} videoUrl={videoUrl} />}
-          <NavLink to="/videos">
-            <p className="pageLinks"><h1>Back to Videos</h1></p>
+          <NavLink to="/videoGenres">
+            <p className="pageLinks">
+              <h1>Back to Videos</h1>
+            </p>
           </NavLink>
         </div>
       </div>

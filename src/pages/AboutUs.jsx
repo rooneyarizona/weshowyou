@@ -2,18 +2,18 @@ import { NavLink } from "react-router-dom";
 
 function AboutUs() {
   return (
+    <>
+    <h1>About Us 📖</h1>
     <div className="mainTextContent">
-      <p className="pageLinks">
-        <NavLink to={"/contactUs"}>
-          <h1>Contact Us</h1>
-        </NavLink>
-      </p>
-      <p className="pageLinks">
-        <NavLink to={"/about"}>
-          <h1>About Us</h1>
-        </NavLink>
-      </p>
+      <NavLink to={"/contactUs"}>
+        <button className="paddedButton">Contact Us</button>
+      </NavLink>
+
+      <NavLink to={"/about"}>
+        <button className="paddedButton">About Us</button>
+      </NavLink>
     </div>
+    </>
   );
 }
 

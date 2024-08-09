@@ -70,6 +70,30 @@ img {
   display: flex;
   gap: 10px;
 }
+.paddedButton {
+  cursor: pointer;
+  background: #ff6347;
+  color: #8ae4c6; 
+  font-size: 22px;
+  padding: 4.75rem 1.5rem;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  height: 50px;
+}
+
+
+.paddedButton:hover {
+  background-color: #76d4b5;
+}
+paddedButton a {
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
 .videoGenreTable{
   border-collapse: collapse;
     margin: 25px 0;

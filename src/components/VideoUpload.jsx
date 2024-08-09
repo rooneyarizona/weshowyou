@@ -56,24 +56,28 @@ function VideoUpload({ onUpload }) {
             type="text"
             placeholder={"User Name"}
             value={userName}
+            required
             onChange={(e) => setUserName(e.target.value)}
           />
           <input
             type="text"
             placeholder="Title"
             value={title}
+            required
             onChange={(e) => setTitle(e.target.value)}
           />
           <input
             type="text"
             placeholder="Description"
             value={description}
+            required
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
             type="text"
             placeholder="Genre"
             value={genre}
+            required
             onChange={(e) => setGenre(e.target.value)}
           />
           <button onClick={handleSubmit}>Upload Video</button>

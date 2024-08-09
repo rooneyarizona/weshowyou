@@ -4,21 +4,18 @@ function Account() {
   return (
     <>
       <div className="mainTextContent">
-        <p className="pageLinks">
-          <NavLink to={"/register"}>
-            <h1>Register</h1>
-          </NavLink>
-        </p>
-        <p className="pageLinks">
-          <NavLink to={"/login"}>
-            <h1>Login</h1>
-          </NavLink>
-        </p>
-        <p className="pageLinks">
-          <NavLink to={"/logout"}>
-            <h1>Logout</h1>
-          </NavLink>
-        </p>
+        <h1>Account 🧑‍💻</h1>
+        <NavLink to={"/register"}>
+          <button className="paddedButton">Register</button>
+        </NavLink>
+
+        <NavLink to={"/login"}>
+          <button className="paddedButton">Login</button>
+        </NavLink>
+
+        <NavLink to={"/logout"}>
+          <button className="paddedButton">Logout</button>
+        </NavLink>
       </div>
     </>
   );
