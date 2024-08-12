@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { useUsers } from "../contexts/UsersContext";
 import { useNavigate } from "react-router-dom";
-import { Button } from "bootstrap";
+
 import BackButton from "../components/BackButton";
 
 //Component for reporting data from users API

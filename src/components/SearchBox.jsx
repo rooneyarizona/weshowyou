@@ -1,8 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useVideos } from "../contexts/VideosContext";
+/**
+ * Provides video search functionality with navigation to display results.
+ * @returns 
+ */
 
 export default function SearchBox() {
+  //Array to present placeholder options for user inspiration
   const searchArray = [
     { id: 1, searchRequest: "How to walk a dog" },
     { id: 2, searchRequest: "How to change a tire" },
@@ -38,6 +43,9 @@ export default function SearchBox() {
     }
   };
 
+  /**
+   * function to change array element based on user click
+   */
   function handleSearchBoxChange() {
     const randomIndex = Math.floor(Math.random() * searchArray.length);
     const randomSearchRequest = searchArray[randomIndex].searchRequest;

@@ -1,4 +1,6 @@
-//Component for main page section to show search results and videolist
+/**
+ * Component not used in application
+ */
 
 import VideoList from "./VideoList";
 import SearchResults from "./SearchResults";

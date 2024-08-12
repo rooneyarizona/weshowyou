@@ -1,6 +1,11 @@
 import { useVideos } from "../contexts/VideosContext";
 import VideoItem from "./VideoItem";
 
+/**
+ * Results from search box presented as a video item
+ * @returns  VideoItem
+ * */
+
 export default function SearchResults() {
   const { searchResults } = useVideos([]);
 
@@ -16,6 +21,7 @@ export default function SearchResults() {
               videoId={resultItem.videoId}
               videoUrl={resultItem.videoUrl}
               title={resultItem.videoTitle}
+              username={resultItem.userName}
               controls
               muted
               autoplay

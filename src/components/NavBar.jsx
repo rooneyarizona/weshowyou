@@ -2,6 +2,11 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import SearchBox from "./SearchBox";
 
+/**
+ * Navigation bar options. Can be scaled easily when new pages/features are added to application.
+ * @returns Navigation bar options
+ */
+
 export default function NavBar() {
   const [hoveredButton, setHoveredButton] = useState(null);
 
@@ -59,6 +64,7 @@ export default function NavBar() {
           <NavLink to="/testPage">Test Page</NavLink>
         </button>
         <button
+          hidden={true}
           style={buttonStyle("Administration")}
           onMouseEnter={() => handleMouseEnter("Administration")}
           onMouseLeave={handleMouseLeave}

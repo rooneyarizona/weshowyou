@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * @component
+ * Component for displaying the differnet video genres that can be viewed.
+ */
+
 function VideoGenres() {
   const navigate = useNavigate();
   const [videoGenre, setVideoGenre] = useState("Cooking");
@@ -16,19 +21,100 @@ function VideoGenres() {
       <table className="videoGenreTable">
         <tbody>
           <tr>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Cooking")}>Cooking 🧑🏾‍🍳</button></td>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Sports")}>Sports 🏅</button></td>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Development")}>Development 👩🏻‍💻</button></td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Cooking")}
+              >
+                Cooking
+                <br />
+                🧑🏾‍🍳
+              </button>
+            </td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Sports")}
+              >
+                Sports
+                <br />
+                🏅
+              </button>
+            </td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Development")}
+              >
+                Development
+                <br />
+                👩🏻‍💻
+              </button>
+            </td>
           </tr>
           <tr>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Home")}>Home 🏠</button></td>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Car")}>Car 🚗</button></td>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Pets")}>Pets 🐶</button></td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Home")}
+              >
+                Home
+                <br />
+                🏠
+              </button>
+            </td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Car")}
+              >
+                Car
+                <br />
+                🚗
+              </button>
+            </td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Pets")}
+              >
+                Pets
+                <br />
+                🐶
+              </button>
+            </td>
           </tr>
           <tr>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Finance")}>Finance 💷</button></td>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Misc")}>Misc 🎨</button></td>
-            <td><button className="paddedButton" onClick={() => handleGenreSelection("Random")}>Random 🔮</button></td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Finance")}
+              >
+                Finance
+                <br />
+                💷
+              </button>
+            </td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Misc")}
+              >
+                Misc
+                <br />
+                🎨
+              </button>
+            </td>
+            <td>
+              <button
+                className="paddedButton"
+                onClick={() => handleGenreSelection("Random")}
+              >
+                Random
+                <br />
+                🔮
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -37,4 +123,3 @@ function VideoGenres() {
 }
 
 export default VideoGenres;
-  

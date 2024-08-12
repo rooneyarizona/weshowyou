@@ -33,7 +33,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
-        <Route index element={<Account />} />
+        <Route index element={<VideoGenres />} />
         <Route path="account" element={<Account />} />
         <Route path="aboutUs" element={<AboutUs />} />
         <Route path="about" element={<About />} />

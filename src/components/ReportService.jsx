@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 
+/**
+ * TODO: Make report a reusable component that can take report type props.
+ */
+
 function ReportService({ API }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

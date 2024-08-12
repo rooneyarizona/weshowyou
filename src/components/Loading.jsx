@@ -1,3 +1,8 @@
+/**
+ * Loading component that can be reused for any page fetching data
+ * @returns Loading text
+ */
+
 function Loading() {
   return (
     

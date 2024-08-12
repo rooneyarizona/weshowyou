@@ -1,13 +1,25 @@
 import { useState } from "react";
+import { useUsers } from "../contexts/UsersContext";
+import FormGenres from "./FormGenres";
+/**
+ * Component handles video upload and input metadata as well as validating video duration
+ */
 
 function VideoUpload({ onUpload }) {
+  //Form state management variables
+  const { globalUserName } = useUsers();
   const [videoInfo, setVideoInfo] = useState(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [genre, setGenre] = useState("");
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(globalUserName);
   const [error, setError] = useState("");
 
+  /**
+   * handleFileChange is used for file input and validated video duration is < 299 seconds
+   *@params {Event} e - Change event when a file is seleected
+   *
+   */
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -17,6 +29,7 @@ function VideoUpload({ onUpload }) {
       video.onloadedmetadata = () => {
         window.URL.revokeObjectURL(video.src);
         const duration = video.duration;
+
         if (duration > 299) {
           setError("Video is longer than 299 seconds.");
         } else {
@@ -54,9 +67,10 @@ function VideoUpload({ onUpload }) {
         <div>
           <input
             type="text"
-            placeholder={"User Name"}
+            placeholder={globalUserName}
             value={userName}
             required
+            readOnly
             onChange={(e) => setUserName(e.target.value)}
           />
           <input
@@ -73,13 +87,8 @@ function VideoUpload({ onUpload }) {
             required
             onChange={(e) => setDescription(e.target.value)}
           />
-          <input
-            type="text"
-            placeholder="Genre"
-            value={genre}
-            required
-            onChange={(e) => setGenre(e.target.value)}
-          />
+          
+          <FormGenres onGenreChange={(selectedGenre) => setGenre(selectedGenre)}/>
           <button onClick={handleSubmit}>Upload Video</button>
         </div>
       )}

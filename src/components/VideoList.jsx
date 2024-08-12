@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import VideoItem from "./VideoItem";
 import Loading from "./Loading";
 
-//VideoList component pulls video data from videos API and maps out data
-//TODO: Change API to filter from SearchBox Component
+/**
+ * Component no longer used as functionality changed to allow Search option and video genre selection to reduce API calls.
+ * 
+ */
+
+
 export default function VideoList() {
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(true);

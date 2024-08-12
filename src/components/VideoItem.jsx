@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Comment from "./Comment";
 import { useUsers } from "../contexts/UsersContext";
+/**
+ * Component for VideoItem which includes Comments component based on API results.
+ * @param {*} param0 
+ * @returns 
+ */
 
-//TODO: Split into components as API and display component
-//Pulls comments data and allows user to add a commment which will then set new state to show instantly
-
-export default function VideoItem({ title, videoUrl, videoId }) {
+export default function VideoItem({ username, title, videoUrl, videoId}) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const [userName, setUserName] = useState();
   const { globalUserName } = useUsers();
   const [showComments, setShowComments] = useState(false);
 
+  //API for comments so that they are presented under the respective video as per database relation.
+  //Re-render will take effect if user adds new comment to VideoItem so new comment shows immediately.
   useEffect(() => {
     console.log("Comments fetched");
     async function fetchComments() {
@@ -64,14 +68,17 @@ export default function VideoItem({ title, videoUrl, videoId }) {
   };
 
   return (
-    <div className="main-container">
+    <>
+    <div className="videoContainer">
       <h2 className="video-title">{title}</h2>
+      <h3>Posted by {username} 👋🏽</h3>
 
       <video
         width="500"
         height="400"
         src={videoUrl}
         title={title}
+        userName={username}
         controls
         muted
         autoPlay
@@ -89,5 +96,7 @@ export default function VideoItem({ title, videoUrl, videoId }) {
         />
       )}
     </div>
+    <div></div>
+    </>
   );
 }

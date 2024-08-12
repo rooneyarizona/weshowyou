@@ -3,21 +3,36 @@ import VideoUpload from "../components/VideoUpload";
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import VideoItem from "../components/VideoItem";
-import { useVideos } from "../contexts/VideosContext";
 import { useUsers } from "../contexts/UsersContext";
 
+/**
+ * Video upload page with 2 main functions:
+ * 1- Upload video file to AWS S3 bucket
+ * 2- Send video data to videos database
+ *
+ * @returns - Upload User Interface for user to upload file and input video data
+ */
+
+/**
+ * Accessing AWS S3 bucket to post uploaded video
+ */
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_ACESSS,
   secretAccessKey: process.env.REACT_APP_SECRET,
   region: process.env.REACT_APP_REGION,
 });
-
 const s3 = new AWS.S3();
 
-function Upload({ title, videoUrl }) {
+function Upload({ title, videoUrl, userName }) {
   const [uploadResult, setUploadResult] = useState("");
+  const [videoDetails, setVideoDetails] = useState("");
+
+  //TODO: Take globalUsername as required input for username
   const { globalUserName } = useUsers();
 
+  /**
+   * API to send video data to videos database so that it can be recalled
+   */
   const saveVideoMetadata = (title, description, genre, videoUrl, userName) => {
     fetch("http://localhost:5000/api/videos", {
       method: "POST",
@@ -36,6 +51,7 @@ function Upload({ title, videoUrl }) {
       .then((data) => {
         if (data.success) {
           setUploadResult("Video uploaded successfully 📽️");
+          setVideoDetails({title, videoUrl, userName})
         } else {
           setUploadResult("Error saving video metadata: " + data.message);
         }
@@ -45,6 +61,10 @@ function Upload({ title, videoUrl }) {
       });
   };
 
+  /**
+   * AWS API to upload actual video to S3 bucket
+   *
+   */
   const handleVideoUpload = (file, title, description, genre, userName) => {
     const fileName = `${Date.now()}.mp4`;
 
@@ -62,7 +82,6 @@ function Upload({ title, videoUrl }) {
         const videoUrl = data.Location;
         setUploadResult("Video uploaded successfully 📽️");
 
-        // Send video metadata to the API
         saveVideoMetadata(title, description, genre, videoUrl, userName);
       }
     });
@@ -76,10 +95,19 @@ function Upload({ title, videoUrl }) {
         cussing/swearing 🎓 Must be a demonstration
       </ul>
       <div className="main-container">
+        {/**
+         * VideoUpload component is integrated here to perform video file input
+         */}
         <VideoUpload onUpload={handleVideoUpload} />
         <div id="result">
           <h1>{uploadResult}</h1>
-          {uploadResult && <VideoItem title={title} videoUrl={videoUrl} />}
+          {uploadResult && (
+            <VideoItem
+              title={videoDetails.title}
+              videoUrl={videoDetails.videoUrl}
+              username={videoDetails.userName}
+            />
+          )}
           <NavLink to="/videoGenres">
             <p className="pageLinks">
               <h1>Back to Videos</h1>

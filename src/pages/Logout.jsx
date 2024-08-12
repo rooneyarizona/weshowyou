@@ -11,7 +11,7 @@ function Logout() {
         <div>
             {setGlobalUserName(null)};
             <h1>You have successfull been logged out</h1>
-            <NavLink to={"/videos"}><p>Back to Videos</p></NavLink>
+            <NavLink to={"/videoGenres"}><p>Back to Videos</p></NavLink>
         </div>
     )
 }

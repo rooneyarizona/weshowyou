@@ -61,8 +61,9 @@ function ContactUs() {
             />
           </div>
           <div>
-            <input
-              type="text"
+            <input className="textArea"
+              type="textarea"
+              rows="20"
               placeholder="Comment"
               value={comment}
               onChange={(e) => setComment(e.target.value)}

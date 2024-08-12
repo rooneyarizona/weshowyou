@@ -2,18 +2,29 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import VideoItem from "./VideoItem";
 
+/**
+ * Client view of API data - specifically for videoGenres
+ * @returns VideoItems based on videoGenre selection
+ */
+
 export default function GenreResults() {
   const location = useLocation();
+  //Get state from VideoGenre page location
   const [videoGenre, setVideoGenre] = useState(
     location.state?.genre || "Development"
   );
   const [videoList, setVideoList] = useState([]);
 
+  /**
+   * Get videos by videoGenre
+   */
   useEffect(() => {
     async function getVideosByGenre() {
       try {
-        const res = await fetch(`http://localhost:5000/api/videos/genre/${videoGenre}`);
-        
+        const res = await fetch(
+          `http://localhost:5000/api/videos/genre/${videoGenre}`
+        );
+
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
@@ -21,18 +32,22 @@ export default function GenreResults() {
         console.log("Genre data ", data);
         setVideoList(data);
         console.log("Genre data ", data);
-        console.log(videoList)
+        console.log(videoList);
       } catch (error) {
         console.error("Error fetching videos by genre:", error);
       }
     }
-  
+
     getVideosByGenre();
   }, [videoGenre]);
 
   return (
+
+    /**
+     * Map through videoList array and present selected genre
+     */
     <div>
-      <h1>{videoGenre} Results</h1>
+      <h1>{videoGenre} Videos</h1>
       <h3>
         {videoList.length > 0 ? (
           videoList.map((video) => (
@@ -42,6 +57,7 @@ export default function GenreResults() {
               videoUrl={video.videoUrl}
               videoId={video.videoId}
               dateAdded={video.dateAdded}
+              username={video.userName}
             />
           ))
         ) : (
