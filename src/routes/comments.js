@@ -1,4 +1,6 @@
-//Provides routing based on commentsController functions
+/**
+ * User comments API routing
+ */
 
 const express = require("express");
 const router = express.Router();

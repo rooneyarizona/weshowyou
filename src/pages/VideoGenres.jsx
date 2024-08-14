@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 /**
- * @component
- * Component for displaying the differnet video genres that can be viewed.
+ *
+ * Page to select desired video genre which navigate to results page and render videos from API.
  */
 
 function VideoGenres() {

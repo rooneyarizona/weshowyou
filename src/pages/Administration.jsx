@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useUsers } from "../contexts/UsersContext";
 
-//TODO: Add additional reports
+/**
+ * TODO: Page should only be accessed if globalAdminUsername is correct
+ * Provides naivgation to primary admin reporting APIs.
+ * 
+ */
 
 function Administration() {
   const { globalAdminUsername } = useUsers("");

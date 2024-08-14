@@ -1,5 +1,11 @@
 import VideoList from "../components/VideoList";
 
+/**
+ * 
+ * Initial component to render all videos. No longer used.
+ */
+
+
 function Videos() {
   return (
     <div>

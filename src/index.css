@@ -33,15 +33,7 @@ width: 600px;
 align-self: auto;
 }
 
-/* body {
-margin: 0;
-font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
-background-color: #f0f2f5;
-color: #333;
--ms-overflow-style: none;  
-scrollbar-width: none;  
-} */
-/*Header & Navigation*/
+/*Header & Navigation Styling*/
 .header {
 text-align: center;
 background-color: #2bd8ad;
@@ -53,9 +45,7 @@ padding: 1rem;
 margin-bottom: 0px;
 }
 .main {
-/* margin-top: 1.4rem; */
 display: flex;
-/* gap: .4rem; */
 justify-content: center;
 }
 
@@ -148,6 +138,7 @@ font-weight: 700;
 color: #333;
 margin-bottom: 10px;
 }
+
 /*Form & Buttons styling*/
 .search-icon{
 font-size: 1.6rem;
@@ -199,6 +190,7 @@ color: inherit;
 text-decoration: none;
 font-family: 'Roboto', sans-serif;
 }
+
 /*Video Styling*/
 .video-container {
 display: grid;
@@ -209,28 +201,19 @@ background-color: #fff;
 }
 .main-container {
 display: grid;
-/* grid-template-columns: repeat(1, 2fr);  */
-/* gap: 1px;  */
-/* padding: 1px;  */
 background-color: #fff;
 text-align: center;
 justify-items: center;
 align-items: center;
-/* border-radius: 1px; */
-/* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
 }
 .videoContainer {
   display: grid;
   outline: 2.3px solid #76d4b5;
-  /* grid-template-columns: repeat(1, 2fr);  */
-  /* gap: 1px;  */
-  /* padding: 1px;  */
   background-color: #fff;
   text-align: center;
   justify-items: center;
   align-items: center;
-  /* border-radius: 1px; */
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  
   }
 .mainContainer {
 display: grid;
@@ -272,24 +255,9 @@ font-family: 'Roboto', sans-serif;
 font-size: 1.5rem;
 text-transform: uppercase;
 font-weight: 700;
-/* padding: 1rem; */
 margin-bottom: 1px;
 }
-/* Base styles */
-/* body {
-font-family: Arial, sans-serif;
-}
 
-h1 {
-text-align: center;
-margin-bottom: 20px;
-}
-.container {
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 20px;
-} */
 
 /* Table styles */
 .user-table {
@@ -314,17 +282,7 @@ font-weight: bold;
 background-color: #f9f9f9;
 }
 
-/* Responsive styles for smaller screens */
-/* @media only screen and (max-width: 768px) {
-.container {
-  padding: 10px;
-}
 
-.user-table th,
-.user-table td {
-  padding: 8px;
-}
-} */
 /*Loading styles*/
 .spinner-full-page {
 margin: 2.5rem;

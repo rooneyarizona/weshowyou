@@ -1,5 +1,9 @@
 const db = require("../models/db");
 
+/**
+ Search API controller to fetch video data based on videoTitle inputted by user.
+ */
+
 exports.getVideosBySearch = (req, res) => {
   const videoTitle = req.params.videoTitle.trim();
 

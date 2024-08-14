@@ -1,5 +1,10 @@
 const db = require("../models/db");
 
+/**
+ * 
+ * Video Genre API controller to fetch videos based on genre selection.
+ */
+
 exports.getVideosByGenre = (req, res) => {
   const genre = req.params.videoGenre || req.query.videoGenre;
 

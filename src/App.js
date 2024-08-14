@@ -23,7 +23,12 @@ import VideoGenres from "./pages/VideoGenres";
 import FormSubmitted from "./pages/FormSubmitted";
 import GenreResults from "./components/GenreResults";
 import GetAllUserFeedback from "./pages/GetAllUserFeedback";
+import Welcome from "./pages/Welcome";
 
+/**
+ * 
+ * Browser Router used to maintain Single Page Application functionality by keeping UI in synce with URL.
+ */
 
 function App() {
 
@@ -33,7 +38,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
-        <Route index element={<VideoGenres />} />
+        <Route index element={<Welcome />} />
         <Route path="account" element={<Account />} />
         <Route path="aboutUs" element={<AboutUs />} />
         <Route path="about" element={<About />} />
@@ -49,7 +54,7 @@ function App() {
         <Route path="logout" element={<Logout />} />
         <Route path="registrationSuccess" element={<RegistrationSuccess />} />
         <Route path="testPage" element={<TestPage />} />
-        <Route path="adminLogin" element={<AdministratorLogin />} />
+        <Route path="admin" element={<AdministratorLogin />} />
         <Route path="administration" element={<Administration />} />
         <Route path="getAllUsers" element={<GetAllUsers />} />
         <Route path="getAllVideos" element={<GetAllVideos />} />

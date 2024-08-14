@@ -1,5 +1,10 @@
 import { NavLink } from "react-router-dom";
 
+/**
+ * Page to provide account navigation
+ * @returns Buttons with navigation to relevent pages
+ */
+
 function Account() {
   return (
     <>

@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Form to post data to userFeedback API
+ * 
+ */
+
 function ContactUs() {
   const [userName, setUserName] = useState("");
   const [eMail, setEmail] = useState("");
@@ -30,6 +35,10 @@ function ContactUs() {
       );
       console.log(response.data);
       alert("Form Submitted!");
+/**
+ * useNavigate to direct to user to success page after submission
+ */
+
       navigate("/formSubmitted");
     } catch (error) {
       console.error("Error submitting form: ", error);
@@ -40,7 +49,7 @@ function ContactUs() {
   return (
     <>
       <div>
-        <h1 align="center">Contact Us</h1>
+        <h1 align="center">Contact Us 📨</h1>
         <form onSubmit={handleFormSubmit}>
           <div>
             <input

@@ -6,6 +6,10 @@ import VideoItem from "../components/VideoItem";
 import { useUsers } from "../contexts/UsersContext";
 
 /**
+ * TODO: Split up to adhere to SOLID principles and separate functions.
+ */
+
+/**
  * Video upload page with 2 main functions:
  * 1- Upload video file to AWS S3 bucket
  * 2- Send video data to videos database

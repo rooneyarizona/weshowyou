@@ -1,4 +1,6 @@
-// controllers/authController.js
+/**
+ * Authorization controller API to get username and password
+ */
 const db = require("../models/db");
 
 exports.login = (req, res) => {

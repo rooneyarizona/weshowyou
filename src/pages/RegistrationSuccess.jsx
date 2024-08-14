@@ -1,5 +1,10 @@
 import { useUsers } from "../contexts/UsersContext";
 
+/**
+ * 
+ * @returns Page to show user the registration is successful.
+ */
+
 function RegistrationSuccess() {
 const {globalUserName} = useUsers();
 

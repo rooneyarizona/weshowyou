@@ -1,4 +1,6 @@
-//route API based on videoController functions
+/**
+ * Videos API routing
+ */
 
 const express = require("express");
 const router = express.Router();

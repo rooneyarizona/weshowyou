@@ -1,3 +1,8 @@
+/**
+ * 
+ * Standard about us page to provide web application context.
+ */
+
 function About() {
   return (
     <div className="mainContainer">

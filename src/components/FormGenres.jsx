@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+/**
+ * Compenent provides drop down menu for upload component.
+ * @returns genre state for input
+ */
 function FormGenres({ onGenreChange }) {
   const [genre, setGenre] = useState("Development");
 

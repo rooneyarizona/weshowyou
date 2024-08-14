@@ -1,8 +1,10 @@
-//videoController to setup API requests to video database table
-
 const db = require("../models/db");
 
-//Provides service for adding video metadata to videos table
+/**
+ * Video API controller to put video metadata to videosDB and fetch all video data.
+ *
+ */
+
 exports.uploadVideo = (req, res) => {
   const { videoTitle, videoDescription, videoGenre, videoUrl, userName } =
     req.body;
@@ -25,7 +27,6 @@ exports.uploadVideo = (req, res) => {
   );
 };
 
-//Provides service to select all videos from videos table
 exports.getVideo = (req, res) => {
   const videoQuery = `SELECT * FROM VIDEOS`;
   db.query(videoQuery, (err, results) => {

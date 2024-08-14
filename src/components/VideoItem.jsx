@@ -7,10 +7,10 @@ import { useUsers } from "../contexts/UsersContext";
  * @returns 
  */
 
-export default function VideoItem({ username, title, videoUrl, videoId}) {
+export default function VideoItem({ userName, title, videoUrl, videoId}) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-  const [userName, setUserName] = useState();
+  const [username, setUsername] = useState();
   const { globalUserName } = useUsers();
   const [showComments, setShowComments] = useState(false);
 

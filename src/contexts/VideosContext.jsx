@@ -1,5 +1,9 @@
 import { useContext, createContext, useState } from "react";
 
+/**
+ * Context Provider created with future intention of having access to video props globally.
+ */
+
 const VideosContext = createContext();
 
 function VideosProvider({ children }) {

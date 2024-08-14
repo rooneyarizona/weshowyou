@@ -1,4 +1,6 @@
-// query
+/**
+ * Comment controller API to fetch and post comment data.
+ */
 
 const db = require("../models/db");
 
@@ -24,7 +26,7 @@ exports.addComment = (req, res) => {
       return res.status(500).send(err);
     }
 
-    // Returns the commments from database including one just added
+    // Returns the commments from database included post to update in realtime
     const updatedSql = "SELECT * FROM comments WHERE videoId = ?";
     db.query(updatedSql, [videoId], (err, updatedResults) => {
       if (err) {

@@ -1,5 +1,9 @@
 const db = require("../models/db");
 
+/**]
+ * User API controller to put and fetch data from users database.
+ */
+
 exports.registerUser = (req, res) => {
   const {
     firstName,

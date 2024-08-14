@@ -1,5 +1,10 @@
 const db = require("../models/db");
 
+/**
+ * 
+ * Form API controller to fetch data for reporting and put data from form submission.
+ */
+
 exports.submitForm = (req, res) => {
   const { userName, eMail, comment, formType } = req.body;
   const sql =

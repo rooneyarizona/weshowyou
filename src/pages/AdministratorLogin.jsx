@@ -14,7 +14,7 @@ function AdministratorLogin() {
     console.log(adminUsername);
     if (adminUsername === "admin" && adminPassword === "password123") {
       navigate("/administration");
-      setGlobalAdminUsername(adminUsername);
+      setGlobalAdminUsername("admin");
     } else {
       alert("The username and password are incorrect!");
     }

@@ -1,5 +1,9 @@
 import { createContext, useContext, useState } from "react";
 
+/**
+ * Context Provider for users to access username and admnin username gloabally across application.
+ */
+
 const UsersContext = createContext();
 
 function UsersProvider({ children }) {
