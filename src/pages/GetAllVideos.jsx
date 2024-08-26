@@ -5,9 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 import BackButton from "../components/BackButton";
 
-//Component for reporting data from users API
-//TODO: Make resuable component that can be used for multiple administration reports.
-//TODO: Add return link to reports
+/**
+ * Component for reporting data from videos API
+TODO: Make resuable component that can be used for multiple administration reports.
+TODO: Add return link to reports
+ * 
+ */
 
 function GetAllVideos() {
   const [videos, setVideos] = useState([]);
@@ -15,6 +18,9 @@ function GetAllVideos() {
   const { globalAdminUsername } = useUsers("");
   const navigate = useNavigate();
 
+  /**
+   * TODO: Complete authorization so report cannot be used without admin login from context API.
+   */
   // if(globalAdminUsername !== "admin"){
   //   navigate("/adminLogin")
   // }
@@ -28,7 +34,6 @@ function GetAllVideos() {
         }
         const data = await res.json();
         console.log("Full response: ", data);
-        console.log("Admin Username: ", globalAdminUsername);
         setVideos(data.videos || []);
         setLoading(false);
       } catch (error) {
@@ -38,9 +43,10 @@ function GetAllVideos() {
     getVideos();
   }, []);
 
-  useEffect(() => {
-    console.log("Users state updated:", videos);
-  }, [videos]);
+  /**
+   * Use videos dependency to ensure that re-render occurs as videos populated.
+   */
+  useEffect(() => {}, [videos]);
   if (loading) {
     return <Loading />;
   }
@@ -77,7 +83,7 @@ function GetAllVideos() {
         <p>☹️ No videos found</p>
       )}
       <span>
-        <BackButton location={"administration"}/>
+        <BackButton location={"administration"} />
       </span>
     </div>
   );

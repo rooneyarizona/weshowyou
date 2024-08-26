@@ -1,5 +1,9 @@
 import { useUsers } from "../contexts/UsersContext";
 
+/**
+ * 
+ * COnfirmation page for when user feedback form has been submitted successfully.
+ */
 function FormSubmitted() {
   const { globalUserName } = useUsers();
 

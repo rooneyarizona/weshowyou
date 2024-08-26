@@ -7,10 +7,10 @@ import { useUsers } from "../contexts/UsersContext";
  * @returns 
  */
 
-export default function VideoItem({ userName, title, videoUrl, videoId}) {
+export default function VideoItem({ username, title, videoUrl, videoId}) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-  const [username, setUsername] = useState();
+  const [userName, setUserName] = useState();
   const { globalUserName } = useUsers();
   const [showComments, setShowComments] = useState(false);
 
@@ -78,7 +78,7 @@ export default function VideoItem({ userName, title, videoUrl, videoId}) {
         height="400"
         src={videoUrl}
         title={title}
-        userName={username}
+        username={userName}
         controls
         muted
         autoPlay

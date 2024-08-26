@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import BackButton from "../components/BackButton";
 
+/**
+ * 
+ * User Feedback reporting based on form submissions
+ */
+
 export default function GetAllUserFeedback() {
   const [userFeedback, setUserFeedback] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,7 +31,6 @@ export default function GetAllUserFeedback() {
     getUserFeedback();
   }, []);
 
-  //Testing State is updated correctly
   useEffect(() => {
     console.log("User feedback state updated:", userFeedback);
   }, [userFeedback]);
@@ -35,48 +39,44 @@ export default function GetAllUserFeedback() {
     return <Loading />;
   }
 
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
-
   return (
     <>
-    <div className="container">
-      <h1>User Feedback</h1>
-      {userFeedback.length > 0 ? (
-        <table className="user-table">
-          <thead>
-            <tr>
-              <td>ID</td>
-              <td>Username</td>
-              <td>Feedback Type</td>
-              <td>Date Submitted</td>
-              <td>E-mail</td>
-              <td>Comment</td>
-            </tr>
-          </thead>
-          <tbody>
-            {userFeedback.map((feedback, index) => (
-              <tr key={index}>
-                <td>{feedback.id}</td>
-                <td>{feedback.userName}</td>
-                <td>{feedback.formType}</td>
-                <td>
-                  {new Date(feedback.createdAt).toLocaleDateString("en-US")}
-                </td>
-                <td>{feedback.eMail}</td>
-                <td>{feedback.comment}</td>
+      <div className="container">
+        <h1>User Feedback</h1>
+        {userFeedback.length > 0 ? (
+          <table className="user-table">
+            <thead>
+              <tr>
+                <td>ID</td>
+                <td>Username</td>
+                <td>Feedback Type</td>
+                <td>Date Submitted</td>
+                <td>E-mail</td>
+                <td>Comment</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p>Error Retrieving Feedback 🙈</p>
-      )}
-    </div>
-    <span>
-    <BackButton location={"administration"}/>
-  </span>
-  </>
+            </thead>
+            <tbody>
+              {userFeedback.map((feedback, index) => (
+                <tr key={index}>
+                  <td>{feedback.id}</td>
+                  <td>{feedback.userName}</td>
+                  <td>{feedback.formType}</td>
+                  <td>
+                    {new Date(feedback.createdAt).toLocaleDateString("en-US")}
+                  </td>
+                  <td>{feedback.eMail}</td>
+                  <td>{feedback.comment}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>Error Retrieving Feedback 🙈</p>
+        )}
+      </div>
+      <span>
+        <BackButton location={"administration"} />
+      </span>
+    </>
   );
 }

@@ -44,7 +44,9 @@ function Welcome() {
 
   return (
     <div>
-      <h1>Welcome!</h1>
+      <h1>...because anything over 5 minutes is boring 🥱</h1>
+      
+      <br></br>
       <h2>Demonstration of the Day 📽️</h2>
       {randomVideo ? (
         <VideoItem 

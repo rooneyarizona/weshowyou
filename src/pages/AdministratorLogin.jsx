@@ -2,13 +2,19 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUsers } from "../contexts/UsersContext";
 
+/**
+ * Adminstrator page not visible on main application.
+ * Generic form with hard coding
+ * TODO: Develop improved authentication process.
+ * 
+ */
+
 function AdministratorLogin() {
   const [adminUsername, setAdminUsername] = useState("");
   const [adminPassword, setAdminPassword] = useState("");
   const navigate = useNavigate();
   const { globalAdminUsername, setGlobalAdminUsername } = useUsers("");
 
-  //FIX LOGIN DETAILS
   function handleLoginSubmit(event) {
     event.preventDefault();
     console.log(adminUsername);

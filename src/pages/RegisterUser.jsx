@@ -15,7 +15,7 @@ function RegisterUser() {
   const [password, setPassword] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [eMailAddress, setEmailAddress] = useState("");
-  const [dateJoined, setDateJoined] = useState("2024-07-22");
+  const [dateJoined, setDateJoined] = useState("2024-08-14");
   const [dateError, setDateError] = useState("");
 
   const navigate = useNavigate();

@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { useUsers } from '../contexts/UsersContext';
 
+/**
+ * Context API to remove global username
+ * 
+ */
 
 
 function Logout() {

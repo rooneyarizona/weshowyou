@@ -1,7 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useUsers } from "../contexts/UsersContext";
+import { useState } from "react";
 
-const { useState } = require("react");
+/**
+ * TODO: Implement improved authentication and authorization
+ * 
+ * Simple login page accessing username and password through users API. 
+ */
 
 function Login() {
   const [userName, setUserName] = useState("");
@@ -21,6 +26,9 @@ function Login() {
       });
       const data = await res.json();
       if (data.success) {
+        /**
+         * Global username state set here to be used throughout application features.
+         */
         setGlobalUserName(data.userName);
         navigate("/videoGenres");
       } else {

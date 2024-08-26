@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import BackButton from "../components/BackButton";
 
-//Component for reporting data from users API
-//TODO: Make resuable component that can be used for multiple administration reports.
+
+/**
+ * Component for reporting data from users API
+  TODO: Make resuable component that can be used for multiple administration reports.
+ */
+
 
 function GetAllUsers() {
   const [users, setUsers] = useState([]);
@@ -27,8 +31,11 @@ function GetAllUsers() {
     getUsers();
   }, []);
 
+  /**
+   * Trigger re-render when users has populated
+   */
   useEffect(() => {
-    console.log("Users state updated:", users);
+    
   }, [users]);
   if (loading) {
     return <Loading />;

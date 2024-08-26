@@ -1,5 +1,10 @@
 import { NavLink } from "react-router-dom";
 
+/**
+ * Default 404 page for all endpoints not included in browser router
+ * 
+ */
+
 function PageNotFound() {
   return (
     <div>

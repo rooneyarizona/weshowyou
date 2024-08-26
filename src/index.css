@@ -6,6 +6,8 @@ h1 {
 text-align: center;
 font-family: 'Roboto', sans-serif;
 color: #ff6347; 
+animation-name: moveIn;
+animation-duration: 3s;
 
 }
 h3{
@@ -307,4 +309,19 @@ animation: rotate 1.5s infinite linear;
 to {
   transform: rotate(1turn);
 }
+}
+@keyframes moveIn {
+  0%{
+    opacity: 0;
+    transform: translateX(-100p);
+  }
+  80%{
+    opacity: 7;
+    transform: translateX(-50px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0px)
+  }
+
 }
