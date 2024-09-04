@@ -1,3 +1,4 @@
+import styles from "../pages/About.module.css"
 /**
  *
  * Standard about us page to provide web application context.
@@ -7,7 +8,7 @@ function About() {
   return (
     <div className="mainContainer">
       <p className="mainTextContent">
-        <h1>5 Minutes - Max!</h1>
+        <div className={styles.testH1}>5 Minutes - Max!</div>
         We Show You was first created in 2023 as a provider of short
         demonstration videos. While many other online video streaming providers
         exist (with some fabulous content) it became apparent that scrolling
@@ -19,6 +20,8 @@ function About() {
         what you've got!
       </p>
     </div>
+
+    
   );
 }
 

@@ -13,8 +13,10 @@ const feedbackRoutes = require("./routes/forms");
 const commentRoutes = require("./routes/comments");
 const authRoutes = require("./routes/auth");
 const searchRoutes = require("./routes/search");
-const genreRoutes = require("./routes/videoGenre")
+const genreRoutes = require("./routes/videoGenre");
+// const passportRoutes = require("./routes/passport")
 
+// app.use("/api/passport", passportRoutes)
 app.use("/api/videos", videoRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/userFeedback", feedbackRoutes);
@@ -22,6 +24,15 @@ app.use("/api/comments", commentRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/videos/search", searchRoutes);
 app.use("/api/videos/genre", genreRoutes);
+
+//add https redirection for security
+app.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    res.redirect("https://" + req.headers.host + req.url);
+  }
+});
 
 app.listen(5000, () => {
   console.log("Server started on port 5000");
