@@ -1,21 +1,31 @@
-import { useEffect, useState } from "react";
-import ReportService from "../components/ReportService";
+// //Written as example
 
-/**
- * 
- * Page used to test functions before implementing into application.
- * 
- */
+// import React, { useState, useEffect } from 'react';
 
-function TestPage() {
-  
-  const API = "comments";
+// const VideoPlayer = ({ videoId }) => {
 
-  return (
-   <div>
-    <ReportService API={API} />
-    </div>
-  )
-}
 
-export default TestPage;
+//   //Video data used for VideoItem props
+//   const [videoData, setVideoData] = useState(null);
+//   const [videoId, setVideoId] = useState(null)
+
+//   // useEffect with dependency array
+//   useEffect(() => {
+//     if (videoId) {
+//       // Fetch video details whenever videoId changes
+//       fetch(`http://localhost:5000/api/videos/${videoId}`)
+//         .then(response => response.json())
+//         //Set video data for VideoItem based on API call
+//         .then(data => setVideoData(data));
+//     }
+//   }, [videoId]); // Dependency Array: 
+//                   //object is impacted each time videoId changes
+
+
+//   return (
+//     //VideoItem and Input Form
+
+
+
+//   );
+

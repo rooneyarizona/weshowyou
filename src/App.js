@@ -24,6 +24,8 @@ import FormSubmitted from "./pages/FormSubmitted";
 import GenreResults from "./components/GenreResults";
 import GetAllUserFeedback from "./pages/GetAllUserFeedback";
 import Welcome from "./pages/Welcome";
+import DeleteVideo from "./pages/DeleteVideo";
+import DeleteTest from "./components/DeleteTest";
 
 /**
  * 
@@ -59,7 +61,9 @@ function App() {
         <Route path="getAllUsers" element={<GetAllUsers />} />
         <Route path="getAllVideos" element={<GetAllVideos />} />
         <Route path="getAllUserFeedback" element={<GetAllUserFeedback />} />
+        <Route path="deleteVideo" element={<DeleteVideo />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path="deleteTest" element={<DeleteTest />} />
         </Route>
         </Routes>
     </BrowserRouter>

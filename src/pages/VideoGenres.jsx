@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import styles from "./VideoGenres.module.css";
+
 /**
  *
  * Page to select desired video genre which navigate to results page and render videos from API.
@@ -18,12 +20,12 @@ function VideoGenres() {
   return (
     <div>
       <h1>Video Genres 📽️</h1>
-      <table className="videoGenreTable">
+      <table className={styles.videoGenreTable}>
         <tbody>
           <tr>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Cooking")}
               >
                 Cooking
@@ -33,7 +35,7 @@ function VideoGenres() {
             </td>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Sports")}
               >
                 Sports
@@ -43,7 +45,7 @@ function VideoGenres() {
             </td>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Development")}
               >
                 Development
@@ -55,7 +57,7 @@ function VideoGenres() {
           <tr>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Home")}
               >
                 Home
@@ -65,7 +67,7 @@ function VideoGenres() {
             </td>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Car")}
               >
                 Car
@@ -75,7 +77,7 @@ function VideoGenres() {
             </td>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Pets")}
               >
                 Pets
@@ -87,7 +89,7 @@ function VideoGenres() {
           <tr>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Finance")}
               >
                 Finance
@@ -97,7 +99,7 @@ function VideoGenres() {
             </td>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Misc")}
               >
                 Misc
@@ -107,7 +109,7 @@ function VideoGenres() {
             </td>
             <td>
               <button
-                className="paddedButton"
+                className={styles.paddedButton}
                 onClick={() => handleGenreSelection("Random")}
               >
                 Random

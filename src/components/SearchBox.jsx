@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useVideos } from "../contexts/VideosContext";
 /**
  * Provides video search functionality with navigation to display results.
- * @returns 
+ * @returns
  */
 
 export default function SearchBox() {
@@ -58,7 +58,6 @@ export default function SearchBox() {
 
   return (
     <div>
-      <span className="search-icon">🔎</span>
       <input
         type="text"
         placeholder={searchPlaceholder}
@@ -66,7 +65,7 @@ export default function SearchBox() {
         onChange={handleInputChange}
         ref={inputElement}
       ></input>
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch}>🔎</button>
     </div>
   );
 }

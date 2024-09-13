@@ -39,7 +39,7 @@ export default function GenreResults() {
     }
 
     getVideosByGenre();
-  }, [videoGenre]);
+  }, []);
 
   return (
 

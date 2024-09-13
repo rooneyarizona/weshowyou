@@ -1,0 +1,33 @@
+.paddedButton {
+    cursor: pointer;
+    background: #ff6347;
+    color: #8ae4c6; 
+    font-size: 22px;
+    padding: 3.75rem 0.5rem;
+    margin: 1px;
+    border: none;
+    border-radius: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    height: 50px;
+}
+
+.paddedButton:hover {
+    background-color: #76d4b5;
+}
+    
+paddedButton a {
+    color: inherit;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.videoGenreTable{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 2rem;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}

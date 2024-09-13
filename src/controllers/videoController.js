@@ -5,6 +5,44 @@ const db = require("../models/db");
  *
  */
 
+exports.getVideoById = (req, res) => {
+  const videoId = req.params.videoId;
+  const getVideoByIdQuery = `SELECT * FROM videos WHERE videoId = ?`;
+
+  db.query(getVideoByIdQuery, [videoId], (err, results) => {
+    if (err) {
+      return res.status(500).send({ success: false, message: err.message });
+    }
+
+    if (results.length === 0) {
+      return res
+        .status(404)
+        .send({ success: false, message: "Video not found" });
+    }
+
+    return res.json(results[0]);
+  });
+};
+
+exports.deleteVideo = (req, res) => {
+  const videoId = req.params.videoId;
+  const deleteVideoQuery = `DELETE FROM videos WHERE videoId = ?`;
+
+  db.query(deleteVideoQuery, [videoId], (err, results) => {
+    if (err) {
+      return res.status(500).send({ success: false, message: err.message });
+    }
+
+    if (results.affectedRows === 0) {
+      return res
+        .status(404)
+        .send({ success: false, message: "This is not a valid videoId" });
+    }
+
+    res.send({ success: true, message: "Video deleted successfully" });
+  });
+};
+
 exports.uploadVideo = (req, res) => {
   const { videoTitle, videoDescription, videoGenre, videoUrl, userName } =
     req.body;

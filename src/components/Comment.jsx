@@ -1,6 +1,8 @@
 import React from "react";
 import { useUsers } from "../contexts/UsersContext";
 
+import styles from "./Comment.module.css";
+
 /**
  * Comment component that can be used to input and display user comments
  * 
@@ -15,13 +17,13 @@ export default function Comment({
 }) {
   const { globalUserName } = useUsers();
   return (
-    <div className="comments-section">
-      <h3>Comments</h3>
+    <div>
+      
       {comments.length > 0 ? (
         comments.map((comment) => (
           <div key={comment.commentId} className="comment">
             <p>
-              <strong>{comment.userName} </strong>- {comment.commentText}
+              <strong className={styles.commentHeader}>{comment.userName} </strong>- {comment.commentText}
             </p>
             <small>
               Posted on: {new Date(comment.dateAdded).toLocaleString()}

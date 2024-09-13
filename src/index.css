@@ -8,7 +8,7 @@ font-family: 'Roboto', sans-serif;
 color: #ff6347; 
 animation-name: moveIn;
 animation-duration: 3s;
-
+padding: 0;
 }
 h3{
 text-shadow: tomato ;
@@ -51,50 +51,11 @@ display: flex;
 justify-content: center;
 }
 
-.navbar-container {
-background-color: #fff;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 20px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.navbar-buttons {
-display: flex;
-gap: 10px;
-}
-.paddedButton {
-cursor: pointer;
-background: #ff6347;
-color: #8ae4c6; 
-font-size: 22px;
-padding: 3.75rem 0.5rem;
-margin: 1px;
-border: none;
-border-radius: 25px;
-font-family:Verdana, Geneva, Tahoma, sans-serif;
-transition: background-color 0.3s ease;
-width: 200px;
-height: 50px;
-}
 
 
-.paddedButton:hover {
-background-color: #76d4b5;
-}
-paddedButton a {
-color: inherit;
-text-decoration: none;
-font-family: 'Roboto', sans-serif;
-}
-.videoGenreTable{
-border-collapse: collapse;
-margin: 25px 0;
-font-size: 2rem;
-font-family: sans-serif;
-min-width: 400px;
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
+
+
+
 td, thead {
 padding: 12px 15px;
 
@@ -194,30 +155,23 @@ font-family: 'Roboto', sans-serif;
 }
 
 /*Video Styling*/
-.video-container {
+/* .video-container {
 display: grid;
 height: 100%;
 margin: 0;
 padding: 0;
 background-color: #fff;
-}
+} */
 .main-container {
 display: grid;
+grid-template-columns: (2, 1);
 background-color: #fff;
 text-align: center;
 justify-items: center;
 align-items: center;
 }
-.videoContainer {
-  display: grid;
-  outline: 2.3px solid #76d4b5;
-  background-color: #fff;
-  text-align: center;
-  justify-items: center;
-  align-items: center;
-  
-  }
-.mainContainer {
+
+/* .mainContainer {
 display: grid;
 grid-template-columns: repeat(1, 2fr); 
 gap: 1px; 
@@ -228,10 +182,12 @@ justify-items: center;
 align-items: center;
 border-radius: 1px;
 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
+} */
 .video-item {
 width: 50%;
 height: 50%;
+/* object-fit: cover !important;
+    border-radius: 10px !important; */
 }
 input.upload {
 display: none;
@@ -257,7 +213,7 @@ font-family: 'Roboto', sans-serif;
 font-size: 1.5rem;
 text-transform: uppercase;
 font-weight: 700;
-margin-bottom: 1px;
+margin-bottom: 0px;
 }
 
 

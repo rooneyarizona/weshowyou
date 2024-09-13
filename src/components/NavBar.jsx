@@ -2,6 +2,8 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import SearchBox from "./SearchBox";
 
+import styles from "./NavBar.module.css"
+
 /**
  * Navigation bar options. Can be scaled easily when new pages/features are added to application.
  * @returns Navigation bar options
@@ -23,8 +25,8 @@ export default function NavBar() {
   });
 
   return (
-    <div className="navbar-container">
-      <div className="navbar-buttons">
+    <div className={styles.navbarContainer}>
+      <div className={styles.navbarButtons}>
         <button
           style={buttonStyle("Account")}
           onMouseEnter={() => handleMouseEnter("Account")}

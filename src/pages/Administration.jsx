@@ -28,6 +28,11 @@ function Administration() {
           <h1>User Feedback</h1>
         </NavLink>
       </p>
+      <p className="pageLinks">
+        <NavLink to={"/deleteVideo"}>
+          <h1>Delete Videos</h1>
+        </NavLink>
+      </p>
     </div>
   );
 }

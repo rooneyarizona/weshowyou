@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Comment from "./Comment";
 import { useUsers } from "../contexts/UsersContext";
+
+import styles from "./VideoItem.module.css"
 /**
  * Component for VideoItem which includes Comments component based on API results.
  * @param {*} param0 
@@ -69,9 +71,9 @@ export default function VideoItem({ username, title, videoUrl, videoId}) {
 
   return (
     <>
-    <div className="videoContainer">
+    <div className={styles.videoContainer}>
       <h2 className="video-title">{title}</h2>
-      <h3>Posted by {username} 👋🏽</h3>
+      <span className={styles.videoUsername}>Posted by {username} 👋🏽</span>
 
       <video
         width="500"

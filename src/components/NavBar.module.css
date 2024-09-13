@@ -1,0 +1,13 @@
+.navbarContainer {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+.navbarButtons {
+    display: flex;
+    gap: 10px;
+    }
