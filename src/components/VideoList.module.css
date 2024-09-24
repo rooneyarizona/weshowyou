@@ -1,0 +1,23 @@
+.videoListContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 16px; 
+    padding: 16px; 
+    border-color: brown;
+    border-style: dashed;
+  }
+  
+  .videoItem {
+    background-color: blue; 
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    border-style: dashed;
+    border-color: black;
+  }
+  
+  .videoItem:hover {
+    transform: scale(1.05); 
+  }
+  

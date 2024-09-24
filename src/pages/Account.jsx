@@ -21,6 +21,10 @@ function Account() {
         <NavLink to={"/logout"}>
           <button className="paddedButton">Logout</button>
         </NavLink>
+
+        <NavLink to={"/userProfile"}>
+          <button className="paddedButton">User Portal</button>
+        </NavLink>
       </div>
     </>
   );

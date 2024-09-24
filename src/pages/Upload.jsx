@@ -30,6 +30,7 @@ const s3 = new AWS.S3();
 function Upload({ title, videoUrl, userName }) {
   const [uploadResult, setUploadResult] = useState("");
   const [videoDetails, setVideoDetails] = useState("");
+  
 
   //TODO: Take globalUsername as required input for username
   const { globalUserName } = useUsers();
@@ -87,6 +88,7 @@ function Upload({ title, videoUrl, userName }) {
         setUploadResult("Video uploaded successfully 📽️");
 
         saveVideoMetadata(title, description, genre, videoUrl, userName);
+        
       }
     });
   };
@@ -102,7 +104,8 @@ function Upload({ title, videoUrl, userName }) {
         {/**
          * VideoUpload component is integrated here to perform video file input
          */}
-        <VideoUpload onUpload={handleVideoUpload} />
+         {!uploadResult &&
+        <VideoUpload onUpload={handleVideoUpload} />}
         <div id="result">
           <h1>{uploadResult}</h1>
           {uploadResult && (

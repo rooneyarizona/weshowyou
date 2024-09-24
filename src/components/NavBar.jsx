@@ -55,7 +55,7 @@ export default function NavBar() {
           onMouseEnter={() => handleMouseEnter("About Us")}
           onMouseLeave={handleMouseLeave}
         >
-          <NavLink to="/aboutUs">About Us</NavLink>
+          <NavLink to="/aboutUs">About</NavLink>
         </button>
         <button
           hidden={true}

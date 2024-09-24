@@ -30,7 +30,7 @@ function Login() {
          * Global username state set here to be used throughout application features.
          */
         setGlobalUserName(data.userName);
-        navigate("/videoGenres");
+        navigate("/userProfile");
       } else {
         alert(data.message);
       }

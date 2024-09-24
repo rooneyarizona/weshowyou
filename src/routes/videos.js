@@ -9,7 +9,8 @@ const videoController = require("../controllers/videoController");
 router.post("/", videoController.uploadVideo);
 router.get("/", videoController.getVideo)
 router.delete("/:videoId", videoController.deleteVideo);
-router.get("/:videoId", videoController.getVideoById)
+router.get("/:videoId", videoController.getVideoById);
+// router.get("/", videoController.getVideoByUsername);
   
 
 module.exports = router;

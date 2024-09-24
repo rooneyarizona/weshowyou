@@ -9,8 +9,9 @@
     border-radius: 25px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     transition: background-color 0.3s ease;
-    width: 200px;
-    height: 50px;
+    width: 175px;
+    height: 25px;
+    align-content: center;
 }
 
 .paddedButton:hover {

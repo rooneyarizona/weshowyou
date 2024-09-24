@@ -1,4 +1,16 @@
-.testH1{
-    color: yellow;
+.aboutHeading{
+    display: flexbox;
+    flex-direction: row;
+    padding: 5rem auto;
+    margin-top: 2rem;
+    color: orangered;
     font-size: 3rem;
+}
+.mainContainer {
+    font-size: 1.7rem;
+    display: flexbox;
+    flex-direction: row;
+    margin: 1rem 10rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* padding: 1rem 1rem; */
 }

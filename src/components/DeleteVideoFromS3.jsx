@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AWS from "aws-sdk";
+import { useNavigate } from "react-router-dom";
 
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_ACESSS,
@@ -9,7 +10,8 @@ AWS.config.update({
 
 const s3 = new AWS.S3();
 
-function DeleteVideoFromS3({ s3Filename, onDeleteCleanup }) {
+function DeleteVideoFromS3({ s3Filename, onDeleteCleanup, videoId }) {
+  const navigate=useNavigate();
   useEffect(() => {
     if (!s3Filename) return;
 
@@ -24,12 +26,15 @@ function DeleteVideoFromS3({ s3Filename, onDeleteCleanup }) {
       } else {
         console.log(s3Filename, "Successfully deleted from S3", data);
 
-        if(onDeleteCleanup){
-            onDeleteCleanup();
+        if (onDeleteCleanup) {
+          onDeleteCleanup();
+          navigate('/deleteConfirmation', {state: {videoId} });
         }
       }
     });
   }, [s3Filename, onDeleteCleanup]);
+
+  
   return (
     <div>
       <h3>{s3Filename} has been deleted</h3>

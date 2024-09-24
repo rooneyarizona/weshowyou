@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import VideoItem from "../components/VideoItem";
 import DeleteVideoFromS3 from "../components/DeleteVideoFromS3";
+import { useNavigate } from "react-router-dom";
 
 function DeleteVideo() {
   const [videoId, setVideoId] = useState("");
@@ -8,6 +9,8 @@ function DeleteVideo() {
   const [videoData, setVideoData] = useState(null);
   const [s3Filename, setS3Filename] = useState("");
   const [isDeleted, setIsDeleted] = useState(false);
+
+  const navigate = useNavigate();
 
   // Fetch video data when videoId changes
   useEffect(() => {
@@ -53,7 +56,7 @@ function DeleteVideo() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage(`Video ${videoId} was deleted successfully from MySQL 🚮`);
+        setMessage(`Video ${videoId} was deleted successfully from database 🚮`);
         setVideoData(null);
         setIsDeleted(true); 
 
@@ -93,7 +96,7 @@ function DeleteVideo() {
       />
       <button onClick={() => setVideoId(videoId)}>Search Video</button>
       {message && <p>{message}</p>}
-      <p>{s3Filename}</p>
+      
 
       {videoData ? (
         <div>
@@ -114,7 +117,7 @@ function DeleteVideo() {
       )}
 
       
-      {isDeleted && <DeleteVideoFromS3 s3Filename={s3Filename} onDeleteCleanup={handleCleanup}/>}
+      {isDeleted && <DeleteVideoFromS3 s3Filename={s3Filename} onDeleteCleanup={handleCleanup} videoId={videoId}/>}
     </div>
   );
 }

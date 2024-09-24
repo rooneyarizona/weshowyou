@@ -65,12 +65,58 @@ exports.uploadVideo = (req, res) => {
   );
 };
 
+// exports.getVideo = (req, res) => {
+//   const videoQuery = `SELECT * FROM VIDEOS`;
+//   db.query(videoQuery, (err, results) => {
+//     if (err) {
+//       return res.status(500).send({ success: false, message: err.message });
+//     }
+//     res.send({ success: true, videos: results });
+//   });
+// };
+
+// exports.getVideoByUsername = (req, res) => {
+//   const userName = req.query.username;  
+//   console.log("Querying videos for userName:", userName);  // Debugging log
+  
+//   const getVideoByUsernameQuery = `SELECT * FROM videos WHERE LOWER(userName) = LOWER(?)`;
+
+//   db.query(getVideoByUsernameQuery, [userName], (err, results) => {
+//     if (err) {
+//       return res.status(500).send({ success: false, message: err.message });
+//     }
+
+//     if (results.length === 0) {
+//       return res.status(404).send({ success: false, message: "No Videos Found" });
+//     }
+
+//     return res.json(results);
+//   });
+// };
+
 exports.getVideo = (req, res) => {
-  const videoQuery = `SELECT * FROM VIDEOS`;
-  db.query(videoQuery, (err, results) => {
-    if (err) {
-      return res.status(500).send({ success: false, message: err.message });
-    }
-    res.send({ success: true, videos: results });
-  });
+  const { username } = req.query;  // Get query parameter
+
+  if (username) {
+    // If username is provided, fetch videos by username
+    const getVideoByUsernameQuery = `SELECT * FROM videos WHERE userName = ?`;
+    db.query(getVideoByUsernameQuery, [username], (err, results) => {
+      if (err) {
+        return res.status(500).send({ success: false, message: err.message });
+      }
+      if (results.length === 0) {
+        return res.status(404).send({ success: false, message: "No Videos Found" });
+      }
+      return res.json(results);
+    });
+  } else {
+    // Otherwise, return all videos
+    const videoQuery = `SELECT * FROM videos`;
+    db.query(videoQuery, (err, results) => {
+      if (err) {
+        return res.status(500).send({ success: false, message: err.message });
+      }
+      res.send({ success: true, videos: results });
+    });
+  }
 };

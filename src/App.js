@@ -26,6 +26,8 @@ import GetAllUserFeedback from "./pages/GetAllUserFeedback";
 import Welcome from "./pages/Welcome";
 import DeleteVideo from "./pages/DeleteVideo";
 import DeleteTest from "./components/DeleteTest";
+import DeleteConfirmation from "./pages/DeleteConfirmation";
+import UserProfile from "./pages/UserProfile";
 
 /**
  * 
@@ -64,6 +66,8 @@ function App() {
         <Route path="deleteVideo" element={<DeleteVideo />} />
         <Route path="*" element={<PageNotFound />} />
         <Route path="deleteTest" element={<DeleteTest />} />
+        <Route path="deleteConfirmation" element={<DeleteConfirmation />} />
+        <Route path="userProfile" element={<UserProfile />} />
         </Route>
         </Routes>
     </BrowserRouter>

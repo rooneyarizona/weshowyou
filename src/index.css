@@ -29,23 +29,10 @@ li {
 }
 }
 
-img {
-height: 150px;
-width: 600px;
-align-self: auto;
-}
+
 
 /*Header & Navigation Styling*/
-.header {
-text-align: center;
-background-color: #2bd8ad;
-font-family: 'Roboto', sans-serif;
-font-size: 1.5rem;
-text-transform: uppercase;
-font-weight: 100;
-padding: 1rem;
-margin-bottom: 0px;
-}
+
 .main {
 display: flex;
 justify-content: center;
