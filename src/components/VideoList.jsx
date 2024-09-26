@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import VideoItem from "./VideoItem";
+import UserVideoItem from "./UserVideoItem";
 import Loading from "./Loading";
 import styles from "./VideoList.module.css"
 
@@ -47,7 +47,7 @@ export default function VideoList({ checkUsername}) {
     <div className={styles.videoListContainer}>
       {videoList.length > 0 ? (
         videoList.map((video) => (
-          <VideoItem className={styles.videoItem}
+          <UserVideoItem className={styles.videoItem}
             key={video.videoId}
             title={video.videoTitle}
             username={video.userName}
