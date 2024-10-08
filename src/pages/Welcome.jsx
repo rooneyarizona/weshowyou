@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import VideoItem from "../components/VideoItem";
 
 /**
- * 
+ *
  * Homepage component for domain root rendering random video.
  * useEffect is used here to fetch external API data.
  */
@@ -17,8 +17,8 @@ function Welcome() {
       try {
         const res = await fetch("http://localhost:5000/api/videos");
         if (!res.ok) throw new Error(`HTTP Error ${res.status}`);
-        const data = await res.json();  
-        setVideos(data.videos || []);  
+        const data = await res.json();
+        setVideos(data.videos || []);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -32,9 +32,9 @@ function Welcome() {
     if (videos.length > 0) {
       handleGetRandomVideo();
     }
-  }, [videos]);  
+  }, [videos]);
 
-  function handleGetRandomVideo(){
+  function handleGetRandomVideo() {
     const randomIndex = Math.floor(Math.random() * videos.length);
     const randomVideoSelection = videos[randomIndex];
     setRandomVideo(randomVideoSelection);
@@ -44,12 +44,10 @@ function Welcome() {
 
   return (
     <div>
-      <h1>...because anything over 5 minutes is boring 🥱</h1>
-      
       <br></br>
       <h2>Demonstration of the Day 📽️</h2>
       {randomVideo ? (
-        <VideoItem 
+        <VideoItem
           key={randomVideo.videoId}
           videoId={randomVideo.videoId}
           videoUrl={randomVideo.videoUrl}

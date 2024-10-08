@@ -3,7 +3,7 @@
  * TODO: Add Avatar and Logout option
  */
 import { useUsers } from "../contexts/UsersContext";
-import styles from "../components/header.module.css"
+import styles from "../components/Header.module.css"
 
 export default function Header() {
   const { globalUserName } = useUsers();

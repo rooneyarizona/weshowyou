@@ -57,7 +57,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
         <Route path="registrationSuccess" element={<RegistrationSuccess />} />
-        <Route path="testPage" element={<TestPage />} />
+        {/* <Route path="testPage" element={<TestPage />} /> */}
         <Route path="admin" element={<AdministratorLogin />} />
         <Route path="administration" element={<Administration />} />
         <Route path="getAllUsers" element={<GetAllUsers />} />

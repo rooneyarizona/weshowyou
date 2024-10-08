@@ -5,8 +5,10 @@
     font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 100;
-    padding: 1rem;
+    padding: 10px auto;
     margin-bottom: 0px;
+    width: 100%;
+ 
     }
 
 .username {
@@ -18,7 +20,13 @@
 }
 
 img {
-    height: 100px;
-    width: 500px;
-    align-self: auto;
+    height: 10rem;
+    width: auto;
+    align-self:center;
     }
+
+    @media (min-width: 768px) {
+        .header {
+          width: 100%;
+        }
+      }

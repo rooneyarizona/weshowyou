@@ -11,7 +11,7 @@ AWS.config.update({
 const s3 = new AWS.S3();
 
 function DeleteVideoFromS3({ s3Filename, onDeleteCleanup, videoId }) {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     if (!s3Filename) return;
 

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useUsers } from "../contexts/UsersContext";
 import FormGenres from "./FormGenres";
+
+import styles from "./VideoUpload.module.css";
 /**
  * Component handles video upload and input metadata as well as validating video duration
  */
@@ -53,12 +55,12 @@ function VideoUpload({ onUpload }) {
   return (
     <div>
       <div>
-        <label htmlFor="fileUp" className="custom-file-upload">
+        <label htmlFor="fileUp" className={styles.customFileUpload}>
           Choose File
         </label>
         <input
           type="file"
-          className="upload"
+          className={styles.upload}
           id="fileUp"
           onChange={handleFileChange}
         />

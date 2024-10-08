@@ -1,0 +1,26 @@
+input.upload {
+    display: none;
+    }
+    .customFileUpload {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #8ae4c6;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    }
+    .customFileUpload:hover {
+    background-color: #76d4b5;
+    }
+    .videoTitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0px;
+    }

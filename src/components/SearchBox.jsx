@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useVideos } from "../contexts/VideosContext";
+
+import styles from "./SearchBox.module.css"
 /**
  * Provides video search functionality with navigation to display results.
  * @returns
@@ -57,7 +59,7 @@ export default function SearchBox() {
   };
 
   return (
-    <div>
+    <div className={styles.searchBoxContainer}>
       <input
         type="text"
         placeholder={searchPlaceholder}

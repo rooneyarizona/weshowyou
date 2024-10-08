@@ -25,14 +25,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api/videos/search", searchRoutes);
 app.use("/api/videos/genre", genreRoutes);
 
-//add https redirection for security
-// app.use((req, res, next) => {
-//   if (req.secure) {
-//     next();
-//   } else {
-//     res.redirect("https://" + req.headers.host + req.url);
-//   }
-// });
+// add https redirection for security
+app.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    res.redirect("https://" + req.headers.host + req.url);
+  }
+});
 
 app.use((req, res, next) => {
   console.log(`Received ${req.method} request for ${req.url}`);

@@ -18,10 +18,10 @@ function Layout() {
           <Header />
           <NavBar />
 
-          <main className="main-container">
+          <main className="mainContainer">
             <Outlet />
           </main>
-          <footer className="main-container">
+          <footer className="mainContainer">
             <Footer />
           </footer>
         </VideosProvider>

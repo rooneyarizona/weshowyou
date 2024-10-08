@@ -73,9 +73,13 @@ export default function NavBar() {
         >
           <NavLink to="/adminLogin">Admin</NavLink>
         </button>
+        </div>
+        <div className={styles.searhBoxContainer}>
+        <SearchBox />
+        </div>
       </div>
 
-      <SearchBox />
-    </div>
+      
+    
   );
 }

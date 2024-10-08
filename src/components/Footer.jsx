@@ -2,7 +2,7 @@
  * Component for footer requirements
  */
 
-import styles from "../components/footer.module.css"
+import styles from "../components/Footer.module.css"
 
 function Footer() {
   return (

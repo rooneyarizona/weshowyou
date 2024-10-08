@@ -20,10 +20,10 @@ function FormGenres({ onGenreChange }) {
       <option value="Home">Home</option>
       <option value="Cars">Cars</option>
       <option value="Pets">Pets</option>
-      <option value="Pets">Sports</option>
-      <option value="Pets">Finance</option>
-      <option value="Pets">Misc</option>
-      <option value="Pets">Random</option>
+      <option value="Sports">Sports</option>
+      <option value="Finance">Finance</option>
+      <option value="Misc">Misc</option>
+      <option value="Random">Random</option>
     </select>
   );
 }

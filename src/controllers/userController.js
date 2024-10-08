@@ -46,15 +46,27 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-exports.getUsers = (req, res) => {
-  const userQuery = `SELECT * FROM USERS`;
-  db.query(userQuery, (err, results) => {
-    if (err) {
-      return res.status(500).send({ success: false, message: err.message });
-    }
-    res.send({ success: true, users: results });
-  });
-};
+// exports.getUsers = (req, res) => {
+//   const userQuery = `SELECT * FROM USERS`;
+//   db.query(userQuery, (err, results) => {
+//     if (err) {
+//       return res.status(500).send({ success: false, message: err.message });
+//     }
+//     res.send({ success: true, users: results });
+//   });
+// };
+
+// exports.getUserbyUsername = (req, res) => {
+
+//   const {username} = req.query;
+//   const usernameQuery = `SELECT * FROM users WHERE username = ?`
+//   db.query(usernameQuery, [username], (err, results) => {
+//     if (err) {
+//       return res.status(500).send({success: false, message: err.message});
+//     }
+//     res.send({ success: true, users: results});
+//   })
+// }
 
 exports.loginUser = (req, res) => {
   const { userName, password } = req.body;
@@ -87,4 +99,33 @@ exports.loginUser = (req, res) => {
       userName: user.userName,
     });
   });
+};
+
+exports.getUsers = (req, res) => {
+  const { username } = req.query; // Get query parameter
+
+  if (username) {
+    // If username is provided, fetch users by username
+    const getUserbyUsername = `SELECT * FROM users WHERE userName = ?`;
+    db.query(getUserbyUsername, [username], (err, results) => {
+      if (err) {
+        return res.status(500).send({ success: false, message: err.message });
+      }
+      if (results.length === 0) {
+        return res
+          .status(404)
+          .send({ success: false, message: "No Users Found" });
+      }
+      return res.json(results);
+    });
+  } else {
+    // Otherwise, return all users
+    const userQuery = `SELECT * FROM users`;
+    db.query(userQuery, (err, results) => {
+      if (err) {
+        return res.status(500).send({ success: false, message: err.message });
+      }
+      res.send({ success: true, users: results });
+    });
+  }
 };

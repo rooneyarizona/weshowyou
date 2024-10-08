@@ -31,4 +31,14 @@ paddedButton a {
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
 }
+.tableContainer {
+    display: grid;
+    
+    /* grid-template-columns: (2, 1); */
+    background-color: #fff;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    }

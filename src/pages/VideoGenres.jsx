@@ -18,7 +18,7 @@ function VideoGenres() {
   }
 
   return (
-    <div>
+    <div className={styles.tableContainer}>
       <h1>Video Genres 📽️</h1>
       <table className={styles.videoGenreTable}>
         <tbody>
