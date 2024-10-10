@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import VideoItem from "../components/VideoItem";
 
+import styles from "../components/VideoItem.module.css"
+
 /**
  *
  * Homepage component for domain root rendering random video.

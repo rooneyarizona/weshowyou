@@ -11,6 +11,7 @@ import styles from "./VideoList.module.css";
 export default function VideoList({ checkUsername }) {
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refreshList, setRefreshList] = useState(false);
 
   //useEffect to pull data from external source and only present on mount.
   useEffect(() => {
@@ -33,7 +34,11 @@ export default function VideoList({ checkUsername }) {
       }
     }
     getVideos();
-  }, [checkUsername]);
+  }, [checkUsername, refreshList]);
+
+  const handleRefresh = () => {
+    setRefreshList((prev) => !prev);
+  };
 
   if (loading) {
     return <Loading />;
@@ -52,6 +57,7 @@ export default function VideoList({ checkUsername }) {
             videoUrl={video.videoUrl}
             videoId={video.videoId}
             dateAdded={video.dateAdded}
+            onVideoDeleted={handleRefresh}
           />
         ))
       ) : (

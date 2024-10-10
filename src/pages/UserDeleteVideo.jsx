@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import DeleteVideoFromS3 from "../components/DeleteVideoFromS3";
 
 
-function UserDeleteVideo({videoId}) {
+function UserDeleteVideo({videoId, onVideoDeleted}) {
 
     
     const [message, setMessage] = useState("");
@@ -59,6 +59,9 @@ function UserDeleteVideo({videoId}) {
         );
         setVideoData(null);
         setIsDeleted(true);
+        if(onVideoDeleted){
+            onVideoDeleted();
+        }
       } else {
         setMessage(`Error: ${data.message}`);
       }

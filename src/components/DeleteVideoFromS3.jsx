@@ -38,6 +38,7 @@ function DeleteVideoFromS3({ s3Filename, onDeleteCleanup, videoId }) {
   return (
     <div>
       <h3>{s3Filename} has been deleted</h3>
+      
     </div>
   );
 }

@@ -5,6 +5,9 @@ import { NavLink } from "react-router-dom";
 import VideoItem from "../components/VideoItem";
 import { useUsers } from "../contexts/UsersContext";
 
+import styles from "./Upload.module.css"
+import Login from "./Login";
+
 /**
  * TODO: Split up to adhere to SOLID principles and separate functions.
  */
@@ -104,8 +107,9 @@ function Upload({ title, videoUrl, userName }) {
         {/**
          * VideoUpload component is integrated here to perform video file input
          */}
-         {!uploadResult &&
-        <VideoUpload onUpload={handleVideoUpload} />}
+         {!globalUserName && <Login />}
+         {globalUserName && !uploadResult &&
+        <VideoUpload onUpload={handleVideoUpload} /> }
         <div id="result">
           <h1>{uploadResult}</h1>
           {uploadResult && (

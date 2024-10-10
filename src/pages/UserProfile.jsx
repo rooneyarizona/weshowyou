@@ -39,9 +39,9 @@ function UserProfile() {
   return (
     <>
       <div className={styles.mainContainer}>
-        <h2>Information</h2>
+        <h2>User Details</h2>
         <p>
-          <table>
+          <table className="user-table">
             <thead>
               <td>First Name</td>
               <td>Last Name</td>
@@ -56,7 +56,7 @@ function UserProfile() {
                   <td>{user.lastName}</td>
                   <td>{user.eMailAddress}</td>
                   <td>{globalUserName}</td>
-                  <td>{user.dateJoined}</td>
+                  <td>{new Date(user.dateJoined).toLocaleDateString("en-US")}</td>
                 </tr>
               ))}
             </tbody>
@@ -65,7 +65,7 @@ function UserProfile() {
         </p>
       </div>
       <div>
-        <h2>Videos</h2>
+        <h2>User Videos</h2>
 
         <VideoList checkUsername={username} />
       </div>

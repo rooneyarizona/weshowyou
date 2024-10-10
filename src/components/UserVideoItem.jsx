@@ -10,7 +10,7 @@ import UserDeleteVideo from "../pages/UserDeleteVideo";
  * @returns
  */
 
-export default function UserVideoItem({ username, title, videoUrl, videoId }) {
+export default function UserVideoItem({ username, title, videoUrl, videoId, onVideoDeleted }) {
   const [userName, setUserName] = useState();
   const { globalUserName } = useUsers();
   const [videoDelete, setVideoDelete] = useState(false);
@@ -41,7 +41,7 @@ export default function UserVideoItem({ username, title, videoUrl, videoId }) {
         ></video>
         <button onClick={handleButtonClick}>Delete</button>
 
-        {videoDelete && <UserDeleteVideo videoId={videoId}/>}
+        {videoDelete && <UserDeleteVideo videoId={videoId} onVideoDeleted={onVideoDeleted}/>}
       </div>
       <div></div>
     </>

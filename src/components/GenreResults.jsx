@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import VideoItem from "./VideoItem";
+import BackButton from "./BackButton"
 
 /**
  * Client view of API data - specifically for videoGenres
@@ -14,6 +15,7 @@ export default function GenreResults() {
     location.state?.genre || "Development"
   );
   const [videoList, setVideoList] = useState([]);
+  const path = "videoGenres"
 
   /**
    * Get videos by videoGenre
@@ -64,6 +66,7 @@ export default function GenreResults() {
           <p>No videos</p>
         )}
       </h3>
+      <BackButton location={path}/>
     </div>
   );
 }

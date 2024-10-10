@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import FormContact from "../components/FormContact";
 
 /**
  * Form to post data to userFeedback API
@@ -46,6 +47,7 @@ function ContactUs() {
     }
   };
 
+ 
   return (
     <>
       <div>
@@ -80,13 +82,15 @@ function ContactUs() {
             />
           </div>
           <div>
-            <input
+
+            <FormContact onFormChange={(selectedForm) => setFormType(selectedForm)}/>
+            {/* <input
               type="text"
               placeholder="Form Type"
               value={formType}
               onChange={(e) => setFormType(e.target.value)}
               required
-            />
+            /> */}
           </div>
 
           <button type="submit">Submit</button>

@@ -13,6 +13,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const { setGlobalUserName } = useUsers();
   const navigate = useNavigate();
+  const [location, setLocation] = useState("")
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ function Login() {
          * Global username state set here to be used throughout application features.
          */
         setGlobalUserName(data.userName);
-        navigate("/userProfile");
+        navigate("/upload");
       } else {
         alert(data.message);
       }
