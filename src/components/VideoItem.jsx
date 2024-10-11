@@ -71,8 +71,10 @@ export default function VideoItem({ username, title, videoUrl, videoId}) {
 
   return (
     <>
-    <div className={styles.videoContainer}>
-      <h2 className="video-title">{title}</h2>
+    <div>
+    <h2 className={styles.videoTitle}>{title}</h2>
+    
+      
       <span className={styles.videoUsername}>Posted by {username} 👋🏽</span>
 
       <video

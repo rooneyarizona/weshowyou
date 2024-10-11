@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
     gap: 16px; 
     padding: 16px; 
-    border-color: brown;
+    border-color: #8ae4c6;
     border-style: dashed;
   }
   
@@ -21,3 +21,30 @@
     transform: scale(1.05); 
   }
   
+   video {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.videoUsername {
+    font-family: cursive;
+}
+
+.video-title {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.0rem;
+    margin-bottom: 0px;
+}
+
+/* .videoListContainer {
+    display: grid;
+    outline: 2.3px solid #76d4b5;
+    background-color: #fff;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 2.5rem; 
+} */

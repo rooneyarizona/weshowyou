@@ -1,6 +1,8 @@
 import { useVideos } from "../contexts/VideosContext";
 import VideoItem from "./VideoItem";
 
+import styles from "./VideoList.module.css"
+
 /**
  * Results from search box presented as a video item
  * @returns  VideoItem
@@ -10,13 +12,13 @@ export default function SearchResults() {
   const { searchResults } = useVideos([]);
 
   return (
-    <div>
-      {console.log("Search Results Global:", searchResults)}
+    <>    
       <h1>Search Results 📽️</h1>
-      {searchResults.length > 0 ? (
-        <div>
-          {searchResults.map((resultItem) => (
+      <div className={styles.videoListContainer}>
+      {searchResults.length > 0 ? (   
+          searchResults.map((resultItem) => (
             <VideoItem
+              className={styles.videoItem}
               key={resultItem.videoId}
               videoId={resultItem.videoId}
               videoUrl={resultItem.videoUrl}
@@ -24,14 +26,16 @@ export default function SearchResults() {
               username={resultItem.userName}
               controls
               muted
-              autoplay
-              className="responsive-video"
+              autoplay              
             />
-          ))}
-        </div>
+          ))
+          
       ) : (
         <p>No results found.</p>
       )}
     </div>
+   
+    </>
   );
+  
 }

@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import FormContact from "../components/FormContact";
+import { useUsers } from "../contexts/UsersContext";
+
+
 
 /**
  * Form to post data to userFeedback API
@@ -10,11 +13,14 @@ import FormContact from "../components/FormContact";
  */
 
 function ContactUs() {
+  const {globalUserName} = useUsers();
   const [userName, setUserName] = useState("");
   const [eMail, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [formType, setFormType] = useState("");
   const [createdAt, setCreatedAt] = useState("");
+
+  
 
   const navigate = useNavigate();
 
@@ -56,7 +62,7 @@ function ContactUs() {
           <div>
             <input
               type="text"
-              placeholder="Username"
+              placeholder={globalUserName}
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               required

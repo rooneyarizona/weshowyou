@@ -36,9 +36,10 @@ video {
 
 .videoUsername {
     font-family: cursive;
+    font-size: 1.5rem;
 }
 
-.video-title {
+.videoTitle {
     font-family:Arial, Helvetica, sans-serif;
     font-size: 1.0rem;
     margin-bottom: 0px;

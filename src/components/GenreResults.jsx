@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import VideoItem from "./VideoItem";
 import BackButton from "./BackButton"
 
+import styles from "./VideoList.module.css"
+
 /**
  * Client view of API data - specifically for videoGenres
  * @returns VideoItems based on videoGenre selection
@@ -43,14 +45,15 @@ export default function GenreResults() {
     getVideosByGenre();
   }, []);
 
-  return (
-
-    /**
+  /**
      * Map through videoList array and present selected genre
      */
-    <div>
+  return (
+<>
+    
+    
       <h1>{videoGenre} Videos</h1>
-      <h3>
+      <div className={styles.videoListContainer}>
         {videoList.length > 0 ? (
           videoList.map((video) => (
             <VideoItem
@@ -65,8 +68,9 @@ export default function GenreResults() {
         ) : (
           <p>No videos</p>
         )}
-      </h3>
+        </div>
       <BackButton location={path}/>
-    </div>
+    
+    </>
   );
 }
