@@ -25,7 +25,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/videos/search", searchRoutes);
 app.use("/api/videos/genre", genreRoutes);
 
-// add https redirection for security
+// https redirection for security
 app.use((req, res, next) => {
   if (req.secure) {
     next();

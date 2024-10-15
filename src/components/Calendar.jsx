@@ -2,7 +2,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.module.css";
 
-//TODO Update for reusable component!
+//Unused component- integrated DatePicker in registration module
 
 function Calendar() {
   const [startDate, setStartDate] = useState(new Date());

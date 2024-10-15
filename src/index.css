@@ -42,9 +42,7 @@ text-decoration: none;
 transition: background-color 0.3s ease;
 text-decoration: none;
 }
-/* .pageLinks:hover{
-background-color: #76d4b5;
-} */
+
 .mainTextContent {
 font-family:Verdana, Geneva, Tahoma, sans-serif;
 font-size: 20px;
@@ -65,10 +63,9 @@ margin-bottom: 10px;
 
 /*Form & Buttons styling*/
 .search-icon{
-/* font-size: 1.6rem; */
 max-width: 100%;
-  height: auto; 
-  display: block;
+height: auto; 
+ display: block;
 }
 input {
 text-align: center;
@@ -80,13 +77,13 @@ font-size: 1rem;
 margin: 5px;
 }
 .textArea{
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  padding: 0.75rem 1rem;
-  font-weight: 500;
-  font-size: 1rem;
-  margin: 5px;
+text-align: center;
+border: 1px solid #ccc;
+border-radius: 25px;
+padding: 0.75rem 1rem;
+font-weight: 500;
+font-size: 1rem;
+margin: 5px;
   }
   
 .dropDownMenu {
@@ -120,31 +117,16 @@ text-decoration: none;
 font-family: 'Roboto', sans-serif;
 }
 
-/*Video Styling*/
-/* .video-container {
-display: grid;
-height: 100%;
-margin: 0;
-padding: 0;
-background-color: #fff;
-} */
-
 .mainContainer {
 background-color: #fff;
 text-align: center;
-justify-items: center;
-align-items: center;
+justify-content: center;
+align-content: center;
 }
-
-/* .video-item {
-width: 50%;
-height: 50%;
-object-fit: cover !important;
-    border-radius: 10px !important;
-} */
 
 /* Table styles */
 .user-table {
+justify-content: center;
 width: 100%;
 max-width: 800px;
 border-collapse: collapse;

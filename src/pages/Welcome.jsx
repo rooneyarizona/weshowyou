@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import VideoItem from "../components/VideoItem";
 
+
 import styles from "../components/VideoItem.module.css"
 
 /**
@@ -42,12 +43,13 @@ function Welcome() {
     setRandomVideo(randomVideoSelection);
   }
 
-  if (loading) return <p>Loading...</p>;
+  
 
   return (
-    <div>
-      <br></br>
+    <>
+      
       <h2>Demonstration of the Day 📽️</h2>
+      <div className={styles.videoContainer}>
       {randomVideo ? (
         <VideoItem
           key={randomVideo.videoId}
@@ -61,9 +63,10 @@ function Welcome() {
           className="responsive-video"
         />
       ) : (
-        <p>No videos available.</p>
+        <p>No video available. Please select videos from navigation bar!</p>
       )}
     </div>
+    </>
   );
 }
 

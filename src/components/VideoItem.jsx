@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import Comment from "./Comment";
 import { useUsers } from "../contexts/UsersContext";
 
-import styles from "./VideoItem.module.css"
+import styles from "./VideoItem.module.css";
 /**
  * Component for VideoItem which includes Comments component based on API results.
- * @param {*} param0 
- * @returns 
+ * @param {*} param0
+ * @returns
  */
 
-export default function VideoItem({ username, title, videoUrl, videoId}) {
+export default function VideoItem({ username, title, videoUrl, videoId }) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const [userName, setUserName] = useState();
@@ -71,36 +71,37 @@ export default function VideoItem({ username, title, videoUrl, videoId}) {
 
   return (
     <>
-    <div>
-    <h2 className={styles.videoTitle}>{title}</h2>
-    
-      
-      <span className={styles.videoUsername}>Posted by {username} 👋🏽</span>
+      <div>
+        <h2 className={styles.videoTitle}>{title}</h2>
 
-      <video
-        width="500"
-        height="400"
-        src={videoUrl}
-        title={title}
-        username={userName}
-        controls
-        muted
-        autoPlay
-        className="responsive-video"
-      ></video>
-      <button onClick={handleButtonClick}>
-        {showComments ? "Hide Comments" : "Show Comments"}
-      </button>
-      {showComments && (
-        <Comment
-          comments={comments}
-          newComment={newComment}
-          setNewComment={setNewComment}
-          handleAddComment={handleAddComment}
-        />
-      )}
-    </div>
-    <div></div>
+        <div className={styles.videoUsername}>Posted by {username} 👋🏽</div>
+
+        <video
+          width="500"
+          height="400"
+          src={videoUrl}
+          title={title}
+          username={userName}
+          controls
+          muted
+          autoPlay
+          className="responsive-video"
+          
+        ></video><div>
+        <button onClick={handleButtonClick}>
+          {showComments ? "Hide Comments" : "Show Comments"}
+        </button>
+        {showComments && (
+          <Comment
+            comments={comments}
+            newComment={newComment}
+            setNewComment={setNewComment}
+            handleAddComment={handleAddComment}
+          />
+        )}
+        </div>
+      </div>
+      <div></div>
     </>
   );
 }

@@ -31,7 +31,7 @@ import UserProfile from "./pages/UserProfile";
 
 /**
  * 
- * Browser Router used to maintain Single Page Application functionality by keeping UI in synce with URL.
+ * Browser Router used to maintain Single Page Application requirement
  */
 
 function App() {

@@ -43,9 +43,11 @@ function GetAllUsers() {
 
   return (
     <>
-    <div className="container">
+    
       <h1>Users</h1>
+      <div className="mainContainer">
       {users.length > 0 ? (
+        
         <table className="user-table">
           <thead>
             <tr>

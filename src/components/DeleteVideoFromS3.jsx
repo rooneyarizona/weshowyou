@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import AWS from "aws-sdk";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Component to perform object delete from AWS S3
+ */
+
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_ACESSS,
   secretAccessKey: process.env.REACT_APP_SECRET,

@@ -109,10 +109,10 @@ function RegisterUser() {
             />
           </div>
           <div>
-            {/* DatePicker for Date of Birth */}
+            {/* DatePicker imported for DOB calendar */}
             <DatePicker
               selected={dateOfBirth}
-              onChange={(date) => setDateOfBirth(date)} // Set dateOfBirth on change
+              onChange={(date) => setDateOfBirth(date)} 
               dateFormat="yyyy-MM-dd"
               placeholderText="Date of Birth"
             />

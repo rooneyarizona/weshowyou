@@ -46,27 +46,7 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-// exports.getUsers = (req, res) => {
-//   const userQuery = `SELECT * FROM USERS`;
-//   db.query(userQuery, (err, results) => {
-//     if (err) {
-//       return res.status(500).send({ success: false, message: err.message });
-//     }
-//     res.send({ success: true, users: results });
-//   });
-// };
 
-// exports.getUserbyUsername = (req, res) => {
-
-//   const {username} = req.query;
-//   const usernameQuery = `SELECT * FROM users WHERE username = ?`
-//   db.query(usernameQuery, [username], (err, results) => {
-//     if (err) {
-//       return res.status(500).send({success: false, message: err.message});
-//     }
-//     res.send({ success: true, users: results});
-//   })
-// }
 
 exports.loginUser = (req, res) => {
   const { userName, password } = req.body;
@@ -102,7 +82,7 @@ exports.loginUser = (req, res) => {
 };
 
 exports.getUsers = (req, res) => {
-  const { username } = req.query; // Get query parameter
+  const { username } = req.query; 
 
   if (username) {
     // If username is provided, fetch users by username
@@ -128,4 +108,28 @@ exports.getUsers = (req, res) => {
       res.send({ success: true, users: results });
     });
   }
+};
+
+/**
+ * Controller to update user details in the database
+ */
+exports.updateUserDetails = (req, res) => {
+  const { firstName, lastName, eMailAddress, userName } = req.body;
+
+  const sql = `
+    UPDATE users
+    SET firstName = ?, lastName = ?, eMailAddress = ?
+    WHERE userName = ?
+  `;
+
+  db.query(
+    sql,
+    [firstName, lastName, eMailAddress, userName],
+    (err, result) => {
+      if (err) {
+        return res.status(500).send({ success: false, message: err.message });
+      }
+      res.send({ success: true, message: "User details updated successfully" });
+    }
+  );
 };
