@@ -16,7 +16,7 @@ function About() {
       
       
         <p>And so We Show You was born! We (well, actually you) provide
-        demonstration videos that are under 5 Minutes! We look foward to seeing
+        demonstration videos that are under 5 Minutes!</p> <p>We look foward to seeing
         what you've got!</p>
         </div>
     </>
